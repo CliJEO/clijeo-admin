@@ -66,7 +66,6 @@ class MainApp extends StatelessWidget {
             SettingsMainScreen.id: (context) => const SettingsMainScreen(),
             SettingsEditScreen.id: (context) => const SettingsEditScreen(),
             SignInHomeScreen.id: (context) => const SignInHomeScreen(),
-            FirstLoginFormScreen.id: (context) => const FirstLoginFormScreen(),
             Wrapper.id: (context) => const Wrapper(),
           });
     });

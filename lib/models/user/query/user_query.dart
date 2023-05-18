@@ -10,7 +10,6 @@ class UserQuery with _$UserQuery {
       {required int id,
       required String title,
       required String content,
-      required bool closed,
       required String timestamp,
       required int responseCount}) = _UserQuery;
 
