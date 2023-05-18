@@ -1,4 +1,4 @@
-import 'package:clijeo_public/controllers/core/file/file_controller.dart';
+import 'package:clijeo_admin/controllers/core/file/file_controller.dart';
 
 class Attachment {
   String name;

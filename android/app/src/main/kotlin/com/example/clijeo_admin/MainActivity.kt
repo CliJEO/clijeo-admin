@@ -1,4 +1,4 @@
-package com.example.clijeo_public
+package com.example.clijeo_admin
 
 import io.flutter.embedding.android.FlutterActivity
 

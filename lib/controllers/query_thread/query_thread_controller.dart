@@ -1,16 +1,16 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:clijeo_public/config.dart';
-import 'package:clijeo_public/controllers/core/api_core/api_utils.dart';
-import 'package:clijeo_public/controllers/core/api_core/dio_base.dart';
-import 'package:clijeo_public/controllers/core/auth/backend_auth.dart';
-import 'package:clijeo_public/controllers/core/error/error_controller.dart';
-import 'package:clijeo_public/controllers/core/file/file_controller.dart';
-import 'package:clijeo_public/controllers/query_thread/query_thread_state.dart';
-import 'package:clijeo_public/models/attachment/attachment.dart';
-import 'package:clijeo_public/models/query/query.dart';
-import 'package:clijeo_public/models/query/query_response/query_response.dart';
+import 'package:clijeo_admin/config.dart';
+import 'package:clijeo_admin/controllers/core/api_core/api_utils.dart';
+import 'package:clijeo_admin/controllers/core/api_core/dio_base.dart';
+import 'package:clijeo_admin/controllers/core/auth/backend_auth.dart';
+import 'package:clijeo_admin/controllers/core/error/error_controller.dart';
+import 'package:clijeo_admin/controllers/core/file/file_controller.dart';
+import 'package:clijeo_admin/controllers/query_thread/query_thread_state.dart';
+import 'package:clijeo_admin/models/attachment/attachment.dart';
+import 'package:clijeo_admin/models/query/query.dart';
+import 'package:clijeo_admin/models/query/query_response/query_response.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

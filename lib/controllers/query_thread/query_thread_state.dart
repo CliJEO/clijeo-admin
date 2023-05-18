@@ -1,5 +1,5 @@
-import 'package:clijeo_public/models/attachment/attachment.dart';
-import 'package:clijeo_public/models/query/query.dart';
+import 'package:clijeo_admin/models/attachment/attachment.dart';
+import 'package:clijeo_admin/models/query/query.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'query_thread_state.freezed.dart';

@@ -1,4 +1,4 @@
-import 'package:clijeo_public/models/query/admin_details/query_response_admin_details.dart';
+import 'package:clijeo_admin/models/query/admin_details/query_response_admin_details.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:clijeo_public/config.dart';
+import 'package:clijeo_admin/config.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class GoogleAuth {

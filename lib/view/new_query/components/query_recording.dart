@@ -1,9 +1,9 @@
-import 'package:clijeo_public/controllers/core/language/locale_text_class.dart';
-import 'package:clijeo_public/controllers/new_query/new_query_form_controller.dart';
-import 'package:clijeo_public/controllers/new_query/recording/recording_controller.dart';
-import 'package:clijeo_public/view/core/theme/app_color.dart';
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
-import 'package:clijeo_public/view/error/widgets/custom_error_widget.dart';
+import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
+import 'package:clijeo_admin/controllers/new_query/new_query_form_controller.dart';
+import 'package:clijeo_admin/controllers/new_query/recording/recording_controller.dart';
+import 'package:clijeo_admin/view/core/theme/app_color.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/view/error/widgets/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

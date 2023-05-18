@@ -1,11 +1,11 @@
-import 'package:clijeo_public/controllers/main_app/main_app_controller.dart';
-import 'package:clijeo_public/view/error/network_error_screen.dart';
-import 'package:clijeo_public/view/first_login_form/first_login_form_screen.dart';
-import 'package:clijeo_public/view/home/home.dart';
-import 'package:clijeo_public/view/error/query_thread_error_screen.dart';
-import 'package:clijeo_public/view/loading/loading.dart';
-import 'package:clijeo_public/view/sign_in/sign_in_home_screen.dart';
-import 'package:clijeo_public/view/splash_screen/splash_screen.dart';
+import 'package:clijeo_admin/controllers/main_app/main_app_controller.dart';
+import 'package:clijeo_admin/view/error/network_error_screen.dart';
+import 'package:clijeo_admin/view/first_login_form/first_login_form_screen.dart';
+import 'package:clijeo_admin/view/home/home.dart';
+import 'package:clijeo_admin/view/error/query_thread_error_screen.dart';
+import 'package:clijeo_admin/view/loading/loading.dart';
+import 'package:clijeo_admin/view/sign_in/sign_in_home_screen.dart';
+import 'package:clijeo_admin/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

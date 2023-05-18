@@ -1,4 +1,4 @@
-import 'package:clijeo_public/controllers/core/shared_pref/shared_pref.dart';
+import 'package:clijeo_admin/controllers/core/shared_pref/shared_pref.dart';
 
 class BackendAuth {
   static String _userToken = "";

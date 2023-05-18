@@ -1,4 +1,4 @@
-import 'package:clijeo_public/models/attachment/attachment.dart';
+import 'package:clijeo_admin/models/attachment/attachment.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'new_query_form_state.freezed.dart';

@@ -1,4 +1,4 @@
-import 'package:clijeo_public/config.dart';
+import 'package:clijeo_admin/config.dart';
 import 'package:dio/dio.dart';
 
 class DioBase {

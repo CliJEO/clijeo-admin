@@ -1,4 +1,4 @@
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class Badges extends StatelessWidget {
