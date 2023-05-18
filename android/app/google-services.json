@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "626402316921",
+    "project_id": "clijeo-public",
+    "storage_bucket": "clijeo-public.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:626402316921:android:808b69edd77627c4967aa8",
+        "android_client_info": {
+          "package_name": "com.clijeo.clijeo_public"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626402316921-85lpg5k0qr7ino8dal6ic8a5s6kscsg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWoamJWMlPubh5ztCCLa56bVEpebU5GN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626402316921-85lpg5k0qr7ino8dal6ic8a5s6kscsg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
