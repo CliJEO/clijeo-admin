@@ -47,7 +47,7 @@ class MainApp extends StatelessWidget {
     return Consumer<LanguageController>(
         builder: (context, languageController, _) {
       return MaterialApp(
-          title: 'CLIJEO-PUBLIC',
+          title: 'CLIJEO-ADMIN',
           locale: Locale(languageController.getCurrentLanguageCode()),
           supportedLocales:
               Constants.getSupportedLanguages().map((e) => Locale(e)).toList(),
