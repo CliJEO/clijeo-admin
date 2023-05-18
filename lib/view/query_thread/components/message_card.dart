@@ -43,7 +43,7 @@ class MessageCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppTheme.backgroundColor,
           // borderRadius: const BorderRadius.all(Radius.circular(5)),
-          border: user == "You"
+          border: user == "Admin"
               ? Border(
                   right: BorderSide(
                       width: 5.0,
@@ -71,7 +71,7 @@ class MessageCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  user == "You"
+                  user == "Admin"
                       ? LocaleTextClass.getTextWithKey(context, user)
                       : user,
                   style: isArchived
