@@ -7,6 +7,7 @@ import 'package:clijeo_admin/controllers/core/language/language_controller.dart'
 import 'package:clijeo_admin/view/home/home.dart';
 import 'package:clijeo_admin/view/loading/loading.dart';
 import 'package:clijeo_admin/view/new_query/new_query_form_screen.dart';
+import 'package:clijeo_admin/view/query_thread/customer_details.dart';
 import 'package:clijeo_admin/view/query_thread/query_thread.dart';
 import 'package:clijeo_admin/view/query_thread/thread_respond.dart';
 import 'package:clijeo_admin/view/settings/settings_edit_screen.dart';
@@ -61,6 +62,8 @@ class MainApp extends StatelessWidget {
           routes: {
             HomeScreen.id: (context) => const HomeScreen(),
             QueryThread.id: (context) => const QueryThread(),
+            CustomerDetailsScreen.id: (context) =>
+                const CustomerDetailsScreen(),
             ThreadRespondScreen.id: (context) => const ThreadRespondScreen(),
             SettingsMainScreen.id: (context) => const SettingsMainScreen(),
             SettingsEditScreen.id: (context) => const SettingsEditScreen(),

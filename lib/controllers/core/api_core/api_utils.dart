@@ -8,11 +8,11 @@ class ApiUtils {
   // For updating user data
   static const String userProfileUpdateUrl = '/admin/update';
 
-  // For creating a new query
-  static const String createQueryUrl = '/query/create';
-
   // For getting a particular queries details
-  static String getQueryDetailsUrl(int queryId) => '/query/$queryId';
+  static String getQueryDetailsUrl(int queryId) => '/query/$queryId/admin';
+
+  // For getting a particular users details
+  static String getUserDetails(String userId) => '/admin/userDetails/$userId';
 
   // For replying to a particular query
   static String replyQueryUrl(int queryId) => '/respond/$queryId/user';

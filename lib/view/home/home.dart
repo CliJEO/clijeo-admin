@@ -19,15 +19,6 @@ class HomeScreen extends StatelessWidget {
   static String id = "HomeScreen";
   const HomeScreen({super.key});
 
-  Future<void> _registerNewQueryPressed(
-      context, ClijeoUserController userController) async {
-    var shouldRefresh =
-        await Navigator.pushNamed(context, NewQueryFormScreen.id);
-    if (shouldRefresh is bool && shouldRefresh) {
-      await _refresh(userController);
-    }
-  }
-
   Future<void> _refresh(ClijeoUserController userController) async {
     await userController.refreshUser();
   }
@@ -96,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                               Text(
                                 LocaleTextClass.getTextWithKey(
-                                    context, "PreviousQueries"),
+                                    context, "ActiveQueries"),
                                 style: AppTextStyle.smallDarkTitle,
                               ),
                               if (user.queries.isEmpty)

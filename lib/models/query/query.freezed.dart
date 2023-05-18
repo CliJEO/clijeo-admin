@@ -25,6 +25,7 @@ mixin _$Query {
   String get content => throw _privateConstructorUsedError;
   bool get closed => throw _privateConstructorUsedError;
   String get timestamp => throw _privateConstructorUsedError;
+  ClijeoCustomerDto get user => throw _privateConstructorUsedError;
   List<QueryMedia> get media => throw _privateConstructorUsedError;
   List<QueryResponse> get responses => throw _privateConstructorUsedError;
 
@@ -44,8 +45,11 @@ abstract class $QueryCopyWith<$Res> {
       String content,
       bool closed,
       String timestamp,
+      ClijeoCustomerDto user,
       List<QueryMedia> media,
       List<QueryResponse> responses});
+
+  $ClijeoCustomerDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -66,6 +70,7 @@ class _$QueryCopyWithImpl<$Res, $Val extends Query>
     Object? content = null,
     Object? closed = null,
     Object? timestamp = null,
+    Object? user = null,
     Object? media = null,
     Object? responses = null,
   }) {
@@ -90,6 +95,10 @@ class _$QueryCopyWithImpl<$Res, $Val extends Query>
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as ClijeoCustomerDto,
       media: null == media
           ? _value.media
           : media // ignore: cast_nullable_to_non_nullable
@@ -99,6 +108,14 @@ class _$QueryCopyWithImpl<$Res, $Val extends Query>
           : responses // ignore: cast_nullable_to_non_nullable
               as List<QueryResponse>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClijeoCustomerDtoCopyWith<$Res> get user {
+    return $ClijeoCustomerDtoCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -114,8 +131,12 @@ abstract class _$$_QueryCopyWith<$Res> implements $QueryCopyWith<$Res> {
       String content,
       bool closed,
       String timestamp,
+      ClijeoCustomerDto user,
       List<QueryMedia> media,
       List<QueryResponse> responses});
+
+  @override
+  $ClijeoCustomerDtoCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -132,6 +153,7 @@ class __$$_QueryCopyWithImpl<$Res> extends _$QueryCopyWithImpl<$Res, _$_Query>
     Object? content = null,
     Object? closed = null,
     Object? timestamp = null,
+    Object? user = null,
     Object? media = null,
     Object? responses = null,
   }) {
@@ -156,6 +178,10 @@ class __$$_QueryCopyWithImpl<$Res> extends _$QueryCopyWithImpl<$Res, _$_Query>
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as ClijeoCustomerDto,
       media: null == media
           ? _value._media
           : media // ignore: cast_nullable_to_non_nullable
@@ -177,6 +203,7 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
       required this.content,
       required this.closed,
       required this.timestamp,
+      required this.user,
       required final List<QueryMedia> media,
       required final List<QueryResponse> responses})
       : _media = media,
@@ -195,6 +222,8 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
   final bool closed;
   @override
   final String timestamp;
+  @override
+  final ClijeoCustomerDto user;
   final List<QueryMedia> _media;
   @override
   List<QueryMedia> get media {
@@ -213,7 +242,7 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Query(id: $id, title: $title, content: $content, closed: $closed, timestamp: $timestamp, media: $media, responses: $responses)';
+    return 'Query(id: $id, title: $title, content: $content, closed: $closed, timestamp: $timestamp, user: $user, media: $media, responses: $responses)';
   }
 
   @override
@@ -226,6 +255,7 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
       ..add(DiagnosticsProperty('content', content))
       ..add(DiagnosticsProperty('closed', closed))
       ..add(DiagnosticsProperty('timestamp', timestamp))
+      ..add(DiagnosticsProperty('user', user))
       ..add(DiagnosticsProperty('media', media))
       ..add(DiagnosticsProperty('responses', responses));
   }
@@ -241,6 +271,7 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
             (identical(other.closed, closed) || other.closed == closed) &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
+            (identical(other.user, user) || other.user == user) &&
             const DeepCollectionEquality().equals(other._media, _media) &&
             const DeepCollectionEquality()
                 .equals(other._responses, _responses));
@@ -255,6 +286,7 @@ class _$_Query with DiagnosticableTreeMixin implements _Query {
       content,
       closed,
       timestamp,
+      user,
       const DeepCollectionEquality().hash(_media),
       const DeepCollectionEquality().hash(_responses));
 
@@ -279,6 +311,7 @@ abstract class _Query implements Query {
       required final String content,
       required final bool closed,
       required final String timestamp,
+      required final ClijeoCustomerDto user,
       required final List<QueryMedia> media,
       required final List<QueryResponse> responses}) = _$_Query;
 
@@ -294,6 +327,8 @@ abstract class _Query implements Query {
   bool get closed;
   @override
   String get timestamp;
+  @override
+  ClijeoCustomerDto get user;
   @override
   List<QueryMedia> get media;
   @override
