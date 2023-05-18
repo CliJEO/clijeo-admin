@@ -67,8 +67,8 @@ class MessageCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   user == "Admin"
@@ -77,6 +77,9 @@ class MessageCard extends StatelessWidget {
                   style: isArchived
                       ? AppTextStyle.smallDarkLightTitle
                       : AppTextStyle.smallAccentTitle,
+                ),
+                const SizedBox(
+                  height: 5,
                 ),
                 Text(
                   date,
