@@ -8,6 +8,7 @@ import 'package:clijeo_admin/view/home/components/query_cards.dart';
 import 'package:clijeo_admin/view/error/query_thread_error_screen.dart';
 import 'package:clijeo_admin/view/loading/loading.dart';
 import 'package:clijeo_admin/view/new_query/new_query_form_screen.dart';
+import 'package:clijeo_admin/view/query_thread/query_thread.dart';
 import 'package:clijeo_admin/view/settings/settings_main_screen.dart';
 import 'package:clijeo_admin/view/core/theme/app_color.dart';
 import 'package:clijeo_admin/view/core/theme/app_text_style.dart';

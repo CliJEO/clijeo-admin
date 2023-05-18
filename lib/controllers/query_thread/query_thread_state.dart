@@ -14,6 +14,7 @@ abstract class QueryThreadState with _$QueryThreadState {
       required List<Attachment> voiceAttachments,
       required List<Attachment> otherAttachments,
       String? attachmentError}) = _QueryThreadStable;
+  const factory QueryThreadState.archived() = _QueryThreadArchived;
   const factory QueryThreadState.loading() = _QueryThreadLoading;
   const factory QueryThreadState.error() = _QueryThreadError;
 }

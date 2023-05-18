@@ -43,6 +43,7 @@
     "Admin": "Admin",
     "QueryThread": "Query Thread",
     "ReplyInThreadButton": "REPLY IN THREAD",
+    "CloseThread": "Close Thread",
     "ArchivedThread": "Archived Thread",
     "ReplyInThreadTitle": "Reply in Thread",
     "Reply-Hint": "Enter reply here",
