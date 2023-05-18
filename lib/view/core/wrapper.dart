@@ -20,7 +20,6 @@ class Wrapper extends StatelessWidget {
       return mainAppController.state.when(
           initial: () => const SplashScreen(),
           authenticated: () => const HomeScreen(),
-          authenticatedFirstLogin: () => const FirstLoginFormScreen(),
           loading: () => const Loading(),
           unauthenticated: (signInError) => SignInHomeScreen(
                 signInError: signInError,

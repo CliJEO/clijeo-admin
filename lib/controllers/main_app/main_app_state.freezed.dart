@@ -21,7 +21,6 @@ mixin _$MainAppState {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) =>
@@ -31,7 +30,6 @@ mixin _$MainAppState {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) =>
@@ -41,7 +39,6 @@ mixin _$MainAppState {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -53,8 +50,6 @@ mixin _$MainAppState {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) =>
@@ -64,8 +59,6 @@ mixin _$MainAppState {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) =>
@@ -75,8 +68,6 @@ mixin _$MainAppState {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),
@@ -146,7 +137,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) {
@@ -159,7 +149,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) {
@@ -172,7 +161,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -190,8 +178,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) {
@@ -204,8 +190,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) {
@@ -218,8 +202,6 @@ class _$_MainAppStateAuthenticated implements _MainAppStateAuthenticated {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),
@@ -276,7 +258,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) {
@@ -289,7 +270,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) {
@@ -302,7 +282,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -320,8 +299,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) {
@@ -334,8 +311,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) {
@@ -348,8 +323,6 @@ class _$_MainAppStateInitial implements _MainAppStateInitial {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),
@@ -436,7 +409,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) {
@@ -449,7 +421,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) {
@@ -462,7 +433,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -480,8 +450,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) {
@@ -494,8 +462,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) {
@@ -508,8 +474,6 @@ class _$_MainAppStateUnauthenticated implements _MainAppStateUnauthenticated {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),
@@ -529,142 +493,6 @@ abstract class _MainAppStateUnauthenticated implements MainAppState {
   @JsonKey(ignore: true)
   _$$_MainAppStateUnauthenticatedCopyWith<_$_MainAppStateUnauthenticated>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_MainAppStateAuthenticatedFirstLoginCopyWith<$Res> {
-  factory _$$_MainAppStateAuthenticatedFirstLoginCopyWith(
-          _$_MainAppStateAuthenticatedFirstLogin value,
-          $Res Function(_$_MainAppStateAuthenticatedFirstLogin) then) =
-      __$$_MainAppStateAuthenticatedFirstLoginCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_MainAppStateAuthenticatedFirstLoginCopyWithImpl<$Res>
-    extends _$MainAppStateCopyWithImpl<$Res,
-        _$_MainAppStateAuthenticatedFirstLogin>
-    implements _$$_MainAppStateAuthenticatedFirstLoginCopyWith<$Res> {
-  __$$_MainAppStateAuthenticatedFirstLoginCopyWithImpl(
-      _$_MainAppStateAuthenticatedFirstLogin _value,
-      $Res Function(_$_MainAppStateAuthenticatedFirstLogin) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_MainAppStateAuthenticatedFirstLogin
-    implements _MainAppStateAuthenticatedFirstLogin {
-  const _$_MainAppStateAuthenticatedFirstLogin();
-
-  @override
-  String toString() {
-    return 'MainAppState.authenticatedFirstLogin()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_MainAppStateAuthenticatedFirstLogin);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() authenticated,
-    required TResult Function() initial,
-    required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
-    required TResult Function() loading,
-    required TResult Function() networkError,
-  }) {
-    return authenticatedFirstLogin();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? authenticated,
-    TResult? Function()? initial,
-    TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
-    TResult? Function()? loading,
-    TResult? Function()? networkError,
-  }) {
-    return authenticatedFirstLogin?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? authenticated,
-    TResult Function()? initial,
-    TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
-    TResult Function()? loading,
-    TResult Function()? networkError,
-    required TResult orElse(),
-  }) {
-    if (authenticatedFirstLogin != null) {
-      return authenticatedFirstLogin();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_MainAppStateAuthenticated value) authenticated,
-    required TResult Function(_MainAppStateInitial value) initial,
-    required TResult Function(_MainAppStateUnauthenticated value)
-        unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
-    required TResult Function(_MainAppStateLoading value) loading,
-    required TResult Function(_MainAppStateNetworkError value) networkError,
-  }) {
-    return authenticatedFirstLogin(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_MainAppStateAuthenticated value)? authenticated,
-    TResult? Function(_MainAppStateInitial value)? initial,
-    TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
-    TResult? Function(_MainAppStateLoading value)? loading,
-    TResult? Function(_MainAppStateNetworkError value)? networkError,
-  }) {
-    return authenticatedFirstLogin?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_MainAppStateAuthenticated value)? authenticated,
-    TResult Function(_MainAppStateInitial value)? initial,
-    TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
-    TResult Function(_MainAppStateLoading value)? loading,
-    TResult Function(_MainAppStateNetworkError value)? networkError,
-    required TResult orElse(),
-  }) {
-    if (authenticatedFirstLogin != null) {
-      return authenticatedFirstLogin(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _MainAppStateAuthenticatedFirstLogin implements MainAppState {
-  const factory _MainAppStateAuthenticatedFirstLogin() =
-      _$_MainAppStateAuthenticatedFirstLogin;
 }
 
 /// @nodoc
@@ -708,7 +536,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) {
@@ -721,7 +548,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) {
@@ -734,7 +560,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -752,8 +577,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) {
@@ -766,8 +589,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) {
@@ -780,8 +601,6 @@ class _$_MainAppStateLoading implements _MainAppStateLoading {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),
@@ -840,7 +659,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     required TResult Function() authenticated,
     required TResult Function() initial,
     required TResult Function(String? signInError) unauthenticated,
-    required TResult Function() authenticatedFirstLogin,
     required TResult Function() loading,
     required TResult Function() networkError,
   }) {
@@ -853,7 +671,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     TResult? Function()? authenticated,
     TResult? Function()? initial,
     TResult? Function(String? signInError)? unauthenticated,
-    TResult? Function()? authenticatedFirstLogin,
     TResult? Function()? loading,
     TResult? Function()? networkError,
   }) {
@@ -866,7 +683,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     TResult Function()? authenticated,
     TResult Function()? initial,
     TResult Function(String? signInError)? unauthenticated,
-    TResult Function()? authenticatedFirstLogin,
     TResult Function()? loading,
     TResult Function()? networkError,
     required TResult orElse(),
@@ -884,8 +700,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     required TResult Function(_MainAppStateInitial value) initial,
     required TResult Function(_MainAppStateUnauthenticated value)
         unauthenticated,
-    required TResult Function(_MainAppStateAuthenticatedFirstLogin value)
-        authenticatedFirstLogin,
     required TResult Function(_MainAppStateLoading value) loading,
     required TResult Function(_MainAppStateNetworkError value) networkError,
   }) {
@@ -898,8 +712,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     TResult? Function(_MainAppStateAuthenticated value)? authenticated,
     TResult? Function(_MainAppStateInitial value)? initial,
     TResult? Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult? Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult? Function(_MainAppStateLoading value)? loading,
     TResult? Function(_MainAppStateNetworkError value)? networkError,
   }) {
@@ -912,8 +724,6 @@ class _$_MainAppStateNetworkError implements _MainAppStateNetworkError {
     TResult Function(_MainAppStateAuthenticated value)? authenticated,
     TResult Function(_MainAppStateInitial value)? initial,
     TResult Function(_MainAppStateUnauthenticated value)? unauthenticated,
-    TResult Function(_MainAppStateAuthenticatedFirstLogin value)?
-        authenticatedFirstLogin,
     TResult Function(_MainAppStateLoading value)? loading,
     TResult Function(_MainAppStateNetworkError value)? networkError,
     required TResult orElse(),

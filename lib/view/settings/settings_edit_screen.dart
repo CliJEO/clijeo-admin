@@ -26,10 +26,6 @@ class SettingsEditScreen extends StatelessWidget {
   static final List<String> _allLanguageList =
       Constants.getSupportedLanguages();
 
-  Function(int) _genderTogglePressed(EditSettingsFormController controller) {
-    return (index) => controller.updateStableStateGender(_allGenderList[index]);
-  }
-
   Function(int) _languageTogglePressed(EditSettingsFormController controller) {
     return (index) =>
         controller.updateStableStateLanguage(_allLanguageList[index]);
@@ -54,10 +50,6 @@ class SettingsEditScreen extends StatelessWidget {
     return ChangeNotifierProvider<EditSettingsFormController>(
       create: (context) => EditSettingsFormController(
           name: user.name,
-          age: user.age,
-          gender: user.gender ?? Constants.getAllGenders().first,
-          location: user.location,
-          phoneNumber: user.phoneNumber,
           language: Provider.of<LanguageController>(context, listen: false)
               .getCurrentLanguageCode()),
       child: Consumer<EditSettingsFormController>(
@@ -65,8 +57,7 @@ class SettingsEditScreen extends StatelessWidget {
               settingsFormController.state.when(
                   loading: () => Loading(),
                   completed: () => const Loading(),
-                  stable: ((name, age, gender, language, phoneNumber, location,
-                          saveProfileDetailsError) =>
+                  stable: ((name, language, saveProfileDetailsError) =>
                       Scaffold(
                         backgroundColor: AppTheme.backgroundColor,
                         body: SingleChildScrollView(
@@ -119,41 +110,6 @@ class SettingsEditScreen extends StatelessWidget {
                                           const SizedBox(
                                             height: 20,
                                           ),
-                                          CustomFormField(
-                                            validator: FormValidationController
-                                                .nullStringValidation,
-                                            initialValue: age?.toString(),
-                                            onSaved: settingsFormController
-                                                .updateStableStateAge,
-                                            textInputType: TextInputType.number,
-                                            fieldTitle:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context, "Age"),
-                                            fieldHintText:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context, "Age-Hint"),
-                                          ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          CustomToggleButton(
-                                              isSelected: _allGenderList
-                                                  .map((e) => e == gender)
-                                                  .toList(),
-                                              onPressed: _genderTogglePressed(
-                                                  settingsFormController),
-                                              fieldTitle: LocaleTextClass
-                                                  .getTextWithKey(
-                                                      context, "Gender"),
-                                              sizeConfig: sizeConfig,
-                                              options: _allGenderList
-                                                  .map((e) => LocaleTextClass
-                                                      .getTextWithKey(
-                                                          context, e))
-                                                  .toList()),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
                                           CustomToggleButton(
                                               isSelected: _allLanguageList
                                                   .map((e) => e == language)
@@ -171,40 +127,6 @@ class SettingsEditScreen extends StatelessWidget {
                                                   .toList()),
                                           const SizedBox(
                                             height: 20,
-                                          ),
-                                          CustomFormField(
-                                            validator: FormValidationController
-                                                .phoneNumberValidation,
-                                            initialValue: phoneNumber,
-                                            onSaved: settingsFormController
-                                                .updateStableStatePhoneNumber,
-                                            textInputType: TextInputType.phone,
-                                            fieldTitle:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context, "PhoneNumber"),
-                                            fieldHintText:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context,
-                                                    "PhoneNumber-Hint"),
-                                          ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          CustomFormField(
-                                            validator: FormValidationController
-                                                .nullStringValidation,
-                                            initialValue: location,
-                                            onSaved: settingsFormController
-                                                .updateStableStateLocation,
-                                            textInputType: TextInputType.text,
-                                            fieldTitle:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context, "Location"),
-                                            fieldHintText:
-                                                LocaleTextClass.getTextWithKey(
-                                                    context, "Location-Hint"),
-                                            minLines: 6,
-                                            maxLines: 8,
                                           ),
                                           const SizedBox(
                                             height: 30,

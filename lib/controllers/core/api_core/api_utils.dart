@@ -1,9 +1,9 @@
 class ApiUtils {
   // For Login via passing google auth ID token
-  static const String loginUrl = '/user/login';
+  static const String loginUrl = '/admin/login';
 
   // For getting user data including queries
-  static const String userUrl = '/user/me';
+  static const String userUrl = '/admin/me';
 
   // For updating user data
   static const String userProfileUpdateUrl = '/user/update';
