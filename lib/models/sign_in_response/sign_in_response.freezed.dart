@@ -20,7 +20,6 @@ SignInResponse _$SignInResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SignInResponse {
-  bool get firstLogin => throw _privateConstructorUsedError;
   String get jwt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +34,7 @@ abstract class $SignInResponseCopyWith<$Res> {
           SignInResponse value, $Res Function(SignInResponse) then) =
       _$SignInResponseCopyWithImpl<$Res, SignInResponse>;
   @useResult
-  $Res call({bool firstLogin, String jwt});
+  $Res call({String jwt});
 }
 
 /// @nodoc
@@ -51,14 +50,9 @@ class _$SignInResponseCopyWithImpl<$Res, $Val extends SignInResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstLogin = null,
     Object? jwt = null,
   }) {
     return _then(_value.copyWith(
-      firstLogin: null == firstLogin
-          ? _value.firstLogin
-          : firstLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
       jwt: null == jwt
           ? _value.jwt
           : jwt // ignore: cast_nullable_to_non_nullable
@@ -75,7 +69,7 @@ abstract class _$$_SignInResponseCopyWith<$Res>
       __$$_SignInResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool firstLogin, String jwt});
+  $Res call({String jwt});
 }
 
 /// @nodoc
@@ -89,14 +83,9 @@ class __$$_SignInResponseCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstLogin = null,
     Object? jwt = null,
   }) {
     return _then(_$_SignInResponse(
-      firstLogin: null == firstLogin
-          ? _value.firstLogin
-          : firstLogin // ignore: cast_nullable_to_non_nullable
-              as bool,
       jwt: null == jwt
           ? _value.jwt
           : jwt // ignore: cast_nullable_to_non_nullable
@@ -108,19 +97,17 @@ class __$$_SignInResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SignInResponse implements _SignInResponse {
-  const _$_SignInResponse({required this.firstLogin, required this.jwt});
+  const _$_SignInResponse({required this.jwt});
 
   factory _$_SignInResponse.fromJson(Map<String, dynamic> json) =>
       _$$_SignInResponseFromJson(json);
 
   @override
-  final bool firstLogin;
-  @override
   final String jwt;
 
   @override
   String toString() {
-    return 'SignInResponse(firstLogin: $firstLogin, jwt: $jwt)';
+    return 'SignInResponse(jwt: $jwt)';
   }
 
   @override
@@ -128,14 +115,12 @@ class _$_SignInResponse implements _SignInResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SignInResponse &&
-            (identical(other.firstLogin, firstLogin) ||
-                other.firstLogin == firstLogin) &&
             (identical(other.jwt, jwt) || other.jwt == jwt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, firstLogin, jwt);
+  int get hashCode => Object.hash(runtimeType, jwt);
 
   @JsonKey(ignore: true)
   @override
@@ -152,15 +137,12 @@ class _$_SignInResponse implements _SignInResponse {
 }
 
 abstract class _SignInResponse implements SignInResponse {
-  const factory _SignInResponse(
-      {required final bool firstLogin,
-      required final String jwt}) = _$_SignInResponse;
+  const factory _SignInResponse({required final String jwt}) =
+      _$_SignInResponse;
 
   factory _SignInResponse.fromJson(Map<String, dynamic> json) =
       _$_SignInResponse.fromJson;
 
-  @override
-  bool get firstLogin;
   @override
   String get jwt;
   @override

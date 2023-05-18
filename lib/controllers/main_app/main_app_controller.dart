@@ -33,11 +33,7 @@ class MainAppController extends ChangeNotifier {
       // Set authentication status based on user state
       userController.state.maybeWhen(
           stable: (user, _) {
-            if (ClijeoUserController.isFirstLoggedInUser(user)) {
-              state = const MainAppState.authenticatedFirstLogin();
-            } else {
-              state = const MainAppState.authenticated();
-            }
+            state = const MainAppState.authenticated();
           },
           orElse: () => state = const MainAppState.networkError());
     } else {
@@ -73,10 +69,7 @@ class MainAppController extends ChangeNotifier {
 
       userController.state.maybeWhen(
           stable: (user, _) {
-            // Setting the state based on first login
-            state = signInResponse.firstLogin
-                ? const MainAppState.authenticatedFirstLogin()
-                : const MainAppState.authenticated();
+            state = const MainAppState.authenticated();
           },
           orElse: () => state);
     } on DioError catch (e) {
@@ -104,15 +97,6 @@ class MainAppController extends ChangeNotifier {
       state = MainAppState.unauthenticated(
           signInError: ErrorController.signInError);
     }
-    notifyListeners();
-  }
-
-  Future<void> firstLoginCompleted(ClijeoUserController userController) async {
-    // user controller state refreshed
-    await userController.refreshUser();
-
-    // updating the state
-    state = const MainAppState.authenticated();
     notifyListeners();
   }
 

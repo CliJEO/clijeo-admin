@@ -8,8 +8,6 @@ abstract class MainAppState with _$MainAppState {
   const factory MainAppState.initial() = _MainAppStateInitial;
   const factory MainAppState.unauthenticated({String? signInError}) =
       _MainAppStateUnauthenticated;
-  const factory MainAppState.authenticatedFirstLogin() =
-      _MainAppStateAuthenticatedFirstLogin;
   const factory MainAppState.loading() = _MainAppStateLoading;
   const factory MainAppState.networkError() = _MainAppStateNetworkError;
 }
