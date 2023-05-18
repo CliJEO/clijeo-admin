@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:clijeo_public/constants.dart';
+import 'package:clijeo_admin/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mime_type/mime_type.dart';

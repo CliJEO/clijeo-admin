@@ -1,4 +1,4 @@
-import 'package:clijeo_public/controllers/core/language/app_localization.dart';
+import 'package:clijeo_admin/controllers/core/language/app_localization.dart';
 import 'package:flutter/material.dart';
 
 class LocaleTextClass {

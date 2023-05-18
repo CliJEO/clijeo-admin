@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.clijeo_public">
+    package="com.example.clijeo_admin">
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <queries>
         <intent>
@@ -8,7 +8,7 @@
         </intent>
     </queries>
    <application
-        android:label="clijeo_public"
+        android:label="clijeo_admin"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

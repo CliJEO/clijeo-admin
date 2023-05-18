@@ -1,10 +1,10 @@
 import 'dart:developer';
 
-import 'package:clijeo_public/controllers/core/api_core/api_utils.dart';
-import 'package:clijeo_public/controllers/core/api_core/dio_base.dart';
-import 'package:clijeo_public/controllers/core/auth/backend_auth.dart';
-import 'package:clijeo_public/controllers/core/shared_pref/shared_pref.dart';
-import 'package:clijeo_public/main.dart';
+import 'package:clijeo_admin/controllers/core/api_core/api_utils.dart';
+import 'package:clijeo_admin/controllers/core/api_core/dio_base.dart';
+import 'package:clijeo_admin/controllers/core/auth/backend_auth.dart';
+import 'package:clijeo_admin/controllers/core/shared_pref/shared_pref.dart';
+import 'package:clijeo_admin/main.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';

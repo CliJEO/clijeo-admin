@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:audioplayers/audioplayers.dart';
-import 'package:clijeo_public/controllers/new_query/audio_playback/audio_playback_state.dart';
+import 'package:clijeo_admin/controllers/new_query/audio_playback/audio_playback_state.dart';
 import 'package:flutter/material.dart';
 
 class AudioPlaybackController extends ChangeNotifier {

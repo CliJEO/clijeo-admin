@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:clijeo_public/constants.dart';
-import 'package:clijeo_public/controllers/core/shared_pref/shared_pref.dart';
+import 'package:clijeo_admin/constants.dart';
+import 'package:clijeo_admin/controllers/core/shared_pref/shared_pref.dart';
 import 'package:flutter/material.dart';
 
 class LanguageController extends ChangeNotifier {

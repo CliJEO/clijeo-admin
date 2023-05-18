@@ -1,5 +1,5 @@
-import 'package:clijeo_public/models/query/query.dart';
-import 'package:clijeo_public/models/user/query/user_query.dart';
+import 'package:clijeo_admin/models/query/query.dart';
+import 'package:clijeo_admin/models/user/query/user_query.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

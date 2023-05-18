@@ -1,14 +1,14 @@
-import 'package:clijeo_public/controllers/core/auth/backend_auth.dart';
-import 'package:clijeo_public/controllers/clijeo_user/clijeo_user_controller.dart';
-import 'package:clijeo_public/controllers/core/language/locale_text_class.dart';
-import 'package:clijeo_public/controllers/main_app/main_app_controller.dart';
-import 'package:clijeo_public/controllers/core/shared_pref/shared_pref.dart';
-import 'package:clijeo_public/view/core/common_components/primary_button.dart';
-import 'package:clijeo_public/view/error/widgets/custom_error_widget.dart';
-import 'package:clijeo_public/view/first_login_form/first_login_form_screen.dart';
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
-import 'package:clijeo_public/view/core/theme/size_config.dart';
-import 'package:clijeo_public/view/core/theme/app_color.dart';
+import 'package:clijeo_admin/controllers/core/auth/backend_auth.dart';
+import 'package:clijeo_admin/controllers/clijeo_user/clijeo_user_controller.dart';
+import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
+import 'package:clijeo_admin/controllers/main_app/main_app_controller.dart';
+import 'package:clijeo_admin/controllers/core/shared_pref/shared_pref.dart';
+import 'package:clijeo_admin/view/core/common_components/primary_button.dart';
+import 'package:clijeo_admin/view/error/widgets/custom_error_widget.dart';
+import 'package:clijeo_admin/view/first_login_form/first_login_form_screen.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/view/core/theme/size_config.dart';
+import 'package:clijeo_admin/view/core/theme/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

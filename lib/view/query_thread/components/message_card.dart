@@ -1,13 +1,13 @@
-import 'package:clijeo_public/models/attachment/attachment.dart';
-import 'package:clijeo_public/controllers/core/language/locale_text_class.dart';
-import 'package:clijeo_public/models/query/media/query_media.dart';
-import 'package:clijeo_public/view/core/common_components/query_audio_player.dart';
-import 'package:clijeo_public/view/error/widgets/custom_error_widget.dart';
-import 'package:clijeo_public/view/query_thread/components/query_thread_other_attachment_widget.dart';
-import 'package:clijeo_public/view/core/theme/app_color.dart';
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
-import 'package:clijeo_public/view/core/theme/size_config.dart';
-import 'package:clijeo_public/view/query_thread/components/query_thread_voice_attachment_widget.dart';
+import 'package:clijeo_admin/models/attachment/attachment.dart';
+import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
+import 'package:clijeo_admin/models/query/media/query_media.dart';
+import 'package:clijeo_admin/view/core/common_components/query_audio_player.dart';
+import 'package:clijeo_admin/view/error/widgets/custom_error_widget.dart';
+import 'package:clijeo_admin/view/query_thread/components/query_thread_other_attachment_widget.dart';
+import 'package:clijeo_admin/view/core/theme/app_color.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/view/core/theme/size_config.dart';
+import 'package:clijeo_admin/view/query_thread/components/query_thread_voice_attachment_widget.dart';
 import 'package:flutter/material.dart';
 
 class MessageCard extends StatelessWidget {

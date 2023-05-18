@@ -1,11 +1,11 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:clijeo_public/controllers/core/api_core/dio_base.dart';
-import 'package:clijeo_public/controllers/core/auth/backend_auth.dart';
-import 'package:clijeo_public/controllers/core/error/error_controller.dart';
-import 'package:clijeo_public/controllers/query_thread/query_thread_attachment/query_thread_attachment_state.dart';
-import 'package:clijeo_public/models/attachment/attachment.dart';
+import 'package:clijeo_admin/controllers/core/api_core/dio_base.dart';
+import 'package:clijeo_admin/controllers/core/auth/backend_auth.dart';
+import 'package:clijeo_admin/controllers/core/error/error_controller.dart';
+import 'package:clijeo_admin/controllers/query_thread/query_thread_attachment/query_thread_attachment_state.dart';
+import 'package:clijeo_admin/models/attachment/attachment.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:open_file_plus/open_file_plus.dart';

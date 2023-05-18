@@ -1,9 +1,9 @@
-import 'package:clijeo_public/controllers/core/language/locale_text_class.dart';
-import 'package:clijeo_public/models/query/query.dart';
-import 'package:clijeo_public/view/query_thread/query_thread.dart';
-import 'package:clijeo_public/view/core/theme/app_color.dart';
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
-import 'package:clijeo_public/view/core/theme/size_config.dart';
+import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
+import 'package:clijeo_admin/models/query/query.dart';
+import 'package:clijeo_admin/view/query_thread/query_thread.dart';
+import 'package:clijeo_admin/view/core/theme/app_color.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/view/core/theme/size_config.dart';
 import 'package:flutter/material.dart';
 
 class QueryCard extends StatelessWidget {

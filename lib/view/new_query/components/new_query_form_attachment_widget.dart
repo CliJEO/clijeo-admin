@@ -1,6 +1,6 @@
-import 'package:clijeo_public/controllers/core/file/file_controller.dart';
-import 'package:clijeo_public/view/core/theme/app_color.dart';
-import 'package:clijeo_public/view/core/theme/app_text_style.dart';
+import 'package:clijeo_admin/controllers/core/file/file_controller.dart';
+import 'package:clijeo_admin/view/core/theme/app_color.dart';
+import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class NewQueryFormAttachmentWidget extends StatelessWidget {

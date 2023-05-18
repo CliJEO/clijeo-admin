@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:626402316921:android:5b8d1d6b893c52d2967aa8",
+        "android_client_info": {
+          "package_name": "com.clijeo.clijeo_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "626402316921-85lpg5k0qr7ino8dal6ic8a5s6kscsg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWoamJWMlPubh5ztCCLa56bVEpebU5GN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "626402316921-85lpg5k0qr7ino8dal6ic8a5s6kscsg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:626402316921:android:808b69edd77627c4967aa8",
         "android_client_info": {
           "package_name": "com.clijeo.clijeo_public"
