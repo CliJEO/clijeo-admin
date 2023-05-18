@@ -6,15 +6,4 @@ class FormValidationController {
       return null;
     }
   }
-
-  static String? phoneNumberValidation(String? val) {
-    final nullStringError = nullStringValidation(val);
-    if (nullStringError == null) {
-      if (val!.length != 10) {
-        return "Please enter a valid phone number";
-      }
-      return null;
-    }
-    return nullStringError;
-  }
 }
