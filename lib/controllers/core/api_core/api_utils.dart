@@ -6,7 +6,7 @@ class ApiUtils {
   static const String userUrl = '/admin/me';
 
   // For updating user data
-  static const String userProfileUpdateUrl = '/user/update';
+  static const String userProfileUpdateUrl = '/admin/update';
 
   // For creating a new query
   static const String createQueryUrl = '/query/create';
