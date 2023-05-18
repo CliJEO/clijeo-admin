@@ -21,10 +21,6 @@ ClijeoUserDto _$ClijeoUserDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ClijeoUserDto {
   String get name => throw _privateConstructorUsedError;
-  int? get age => throw _privateConstructorUsedError;
-  String? get gender => throw _privateConstructorUsedError;
-  String? get phoneNumber => throw _privateConstructorUsedError;
-  String? get location => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,12 +34,7 @@ abstract class $ClijeoUserDtoCopyWith<$Res> {
           ClijeoUserDto value, $Res Function(ClijeoUserDto) then) =
       _$ClijeoUserDtoCopyWithImpl<$Res, ClijeoUserDto>;
   @useResult
-  $Res call(
-      {String name,
-      int? age,
-      String? gender,
-      String? phoneNumber,
-      String? location});
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -60,32 +51,12 @@ class _$ClijeoUserDtoCopyWithImpl<$Res, $Val extends ClijeoUserDto>
   @override
   $Res call({
     Object? name = null,
-    Object? age = freezed,
-    Object? gender = freezed,
-    Object? phoneNumber = freezed,
-    Object? location = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      age: freezed == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gender: freezed == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
@@ -98,12 +69,7 @@ abstract class _$$_ClijeoUserDtoCopyWith<$Res>
       __$$_ClijeoUserDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String name,
-      int? age,
-      String? gender,
-      String? phoneNumber,
-      String? location});
+  $Res call({String name});
 }
 
 /// @nodoc
@@ -118,32 +84,12 @@ class __$$_ClijeoUserDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? age = freezed,
-    Object? gender = freezed,
-    Object? phoneNumber = freezed,
-    Object? location = freezed,
   }) {
     return _then(_$_ClijeoUserDto(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      age: freezed == age
-          ? _value.age
-          : age // ignore: cast_nullable_to_non_nullable
-              as int?,
-      gender: freezed == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      location: freezed == location
-          ? _value.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -151,30 +97,17 @@ class __$$_ClijeoUserDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ClijeoUserDto with DiagnosticableTreeMixin implements _ClijeoUserDto {
-  const _$_ClijeoUserDto(
-      {required this.name,
-      this.age,
-      this.gender,
-      this.phoneNumber,
-      this.location});
+  const _$_ClijeoUserDto({required this.name});
 
   factory _$_ClijeoUserDto.fromJson(Map<String, dynamic> json) =>
       _$$_ClijeoUserDtoFromJson(json);
 
   @override
   final String name;
-  @override
-  final int? age;
-  @override
-  final String? gender;
-  @override
-  final String? phoneNumber;
-  @override
-  final String? location;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClijeoUserDto(name: $name, age: $age, gender: $gender, phoneNumber: $phoneNumber, location: $location)';
+    return 'ClijeoUserDto(name: $name)';
   }
 
   @override
@@ -182,11 +115,7 @@ class _$_ClijeoUserDto with DiagnosticableTreeMixin implements _ClijeoUserDto {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ClijeoUserDto'))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('age', age))
-      ..add(DiagnosticsProperty('gender', gender))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('location', location));
+      ..add(DiagnosticsProperty('name', name));
   }
 
   @override
@@ -194,19 +123,12 @@ class _$_ClijeoUserDto with DiagnosticableTreeMixin implements _ClijeoUserDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ClijeoUserDto &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.age, age) || other.age == age) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.location, location) ||
-                other.location == location));
+            (identical(other.name, name) || other.name == name));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, age, gender, phoneNumber, location);
+  int get hashCode => Object.hash(runtimeType, name);
 
   @JsonKey(ignore: true)
   @override
@@ -223,26 +145,13 @@ class _$_ClijeoUserDto with DiagnosticableTreeMixin implements _ClijeoUserDto {
 }
 
 abstract class _ClijeoUserDto implements ClijeoUserDto {
-  const factory _ClijeoUserDto(
-      {required final String name,
-      final int? age,
-      final String? gender,
-      final String? phoneNumber,
-      final String? location}) = _$_ClijeoUserDto;
+  const factory _ClijeoUserDto({required final String name}) = _$_ClijeoUserDto;
 
   factory _ClijeoUserDto.fromJson(Map<String, dynamic> json) =
       _$_ClijeoUserDto.fromJson;
 
   @override
   String get name;
-  @override
-  int? get age;
-  @override
-  String? get gender;
-  @override
-  String? get phoneNumber;
-  @override
-  String? get location;
   @override
   @JsonKey(ignore: true)
   _$$_ClijeoUserDtoCopyWith<_$_ClijeoUserDto> get copyWith =>

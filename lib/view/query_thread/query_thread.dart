@@ -48,7 +48,7 @@ class QueryThread extends StatelessWidget {
             },
             loading: () => const Loading(),
             error: () => const QueryThreadErrorScreen(),
-            stable: (query, voiceAttachments, otherAttachments,
+            stable: (query, customer, voiceAttachments, otherAttachments,
                     attachmentError) =>
                 Scaffold(
                   backgroundColor: AppTheme.backgroundColor,
@@ -112,11 +112,12 @@ class QueryThread extends StatelessWidget {
                                               height: 20,
                                             ),
                                             MessageCard(
-                                              user: "You",
+                                              user: query.user.name,
                                               body: query.content,
                                               date: QueryThreadController
                                                   .getDatetimeString(
                                                       query.timestamp),
+                                              customer: customer,
                                               isArchived: query.closed,
                                               sizeConfig: sizeConfig,
                                               otherAttachments:
@@ -140,7 +141,9 @@ class QueryThread extends StatelessWidget {
                                                         user: QueryThreadController
                                                             .getResponderName(
                                                                 query.responses[
-                                                                    index]),
+                                                                    index],
+                                                                query
+                                                                    .user.name),
                                                         body: query
                                                             .responses[index]
                                                             .content,
