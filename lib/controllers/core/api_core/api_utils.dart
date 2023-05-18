@@ -15,11 +15,11 @@ class ApiUtils {
   static String getUserDetails(String userId) => '/admin/userDetails/$userId';
 
   // For replying to a particular query
-  static String replyQueryUrl(int queryId) => '/respond/$queryId/user';
+  static String replyQueryUrl(int queryId) => '/respond/$queryId/admin';
 
   // For saving the fcm token of a user
   static String fcmTokenSaveUrl = '/fcm-token/save/admin';
 
   // For fetching media
-  static String mediaUrl(String filename) => '/media/$filename';
+  static String mediaUrl(String filename) => '/media/$filename/admin';
 }
