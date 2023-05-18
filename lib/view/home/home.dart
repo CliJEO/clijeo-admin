@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
                                     return QueryCard(
                                       queryId: query.id,
                                       title: query.title,
-                                      isArchived: query.closed,
+                                      isArchived: false,
                                       sizeConfig: sizeConfig,
                                     );
                                   },

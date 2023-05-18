@@ -35,7 +35,7 @@ class ClijeoUserController extends ChangeNotifier {
               state.copyWith(refreshError: ErrorController.refreshUserError),
           orElse: () => state);
     } on Error catch (e) {
-      log("ClijeoUserController] (refreshUser) Error: ${e.toString}");
+      log("ClijeoUserController] (refreshUser) Error: ${e}");
       state = state.maybeMap(
           stable: (state) =>
               state.copyWith(refreshError: ErrorController.refreshUserError),
