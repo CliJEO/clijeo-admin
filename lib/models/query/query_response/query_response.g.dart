@@ -12,8 +12,7 @@ _$_QueryResponse _$$_QueryResponseFromJson(Map<String, dynamic> json) =>
       timestamp: json['timestamp'] as String,
       admin: json['admin'] == null
           ? null
-          : QueryResponseAdminDetails.fromJson(
-              json['admin'] as Map<String, dynamic>),
+          : ClijeoUserDto.fromJson(json['admin'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_QueryResponseToJson(_$_QueryResponse instance) =>
