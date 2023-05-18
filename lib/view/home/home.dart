@@ -94,21 +94,6 @@ class HomeScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 30,
                               ),
-                              PrimaryButton(
-                                onTap: () => _registerNewQueryPressed(
-                                    context, userController),
-                                sizeConfig: sizeConfig,
-                                child: Center(
-                                  child: Text(
-                                    LocaleTextClass.getTextWithKey(
-                                        context, "RegisterQuery"),
-                                    style: AppTextStyle.smallLightTitle,
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 30,
-                              ),
                               Text(
                                 LocaleTextClass.getTextWithKey(
                                     context, "PreviousQueries"),

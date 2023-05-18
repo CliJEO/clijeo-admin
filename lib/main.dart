@@ -60,7 +60,6 @@ class MainApp extends StatelessWidget {
           initialRoute: Wrapper.id,
           routes: {
             HomeScreen.id: (context) => const HomeScreen(),
-            NewQueryFormScreen.id: (context) => const NewQueryFormScreen(),
             QueryThread.id: (context) => const QueryThread(),
             ThreadRespondScreen.id: (context) => const ThreadRespondScreen(),
             SettingsMainScreen.id: (context) => const SettingsMainScreen(),
