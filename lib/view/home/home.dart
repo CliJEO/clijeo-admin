@@ -3,7 +3,7 @@ import 'package:clijeo_admin/controllers/clijeo_user/clijeo_user_controller.dart
 import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
 import 'package:clijeo_admin/models/user/clijeo_user.dart';
 import 'package:clijeo_admin/view/core/common_components/primary_button.dart';
-import 'package:clijeo_admin/view/home/components/no_prev_query_widget.dart';
+import 'package:clijeo_admin/view/home/components/no_active_query_widget.dart';
 import 'package:clijeo_admin/view/home/components/query_cards.dart';
 import 'package:clijeo_admin/view/error/query_thread_error_screen.dart';
 import 'package:clijeo_admin/view/loading/loading.dart';
@@ -38,17 +38,18 @@ class HomeScreen extends StatelessWidget {
         builder: (context, userController, _) => userController.state.when(
             noUser: () => QueryThreadErrorScreen(),
             loading: () => Loading(),
-            stable: (user, refreshError) => Scaffold(
-                  backgroundColor: AppTheme.backgroundColor,
-                  body: RefreshIndicator(
+            stable: (user, refreshError) => DefaultTabController(
+                  length: 2,
+                  child: Scaffold(
                     backgroundColor: AppTheme.backgroundColor,
-                    color: AppTheme.primaryColor,
-                    strokeWidth: 3,
-                    triggerMode: RefreshIndicatorTriggerMode.onEdge,
-                    onRefresh: () => _refresh(userController),
-                    child: SingleChildScrollView(
+                    body: RefreshIndicator(
+                      backgroundColor: AppTheme.backgroundColor,
+                      color: AppTheme.primaryColor,
+                      strokeWidth: 3,
+                      triggerMode: RefreshIndicatorTriggerMode.onEdge,
+                      onRefresh: () => _refresh(userController),
                       child: Padding(
-                        padding: const EdgeInsets.fromLTRB(30, 60, 30, 20),
+                        padding: const EdgeInsets.fromLTRB(15, 60, 15, 20),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -86,30 +87,91 @@ class HomeScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 30,
                               ),
-                              Text(
-                                LocaleTextClass.getTextWithKey(
-                                    context, "ActiveQueries"),
-                                style: AppTextStyle.smallDarkTitle,
+                              TabBar(
+                                  labelStyle: AppTextStyle.smallDarkTitle,
+                                  labelColor: AppTheme.textDark,
+                                  unselectedLabelStyle:
+                                      AppTextStyle.smallDarkLightTitle,
+                                  unselectedLabelColor: AppTheme.textDarkLight,
+                                  indicatorColor: AppTheme.primaryColor,
+                                  tabs: [
+                                    Tab(
+                                      text: LocaleTextClass.getTextWithKey(
+                                          context, "ActiveQueries"),
+                                    ),
+                                    Tab(
+                                      text: LocaleTextClass.getTextWithKey(
+                                          context, "PendingQueries"),
+                                    )
+                                  ]),
+                              Expanded(
+                                child: TabBarView(children: [
+                                  SingleChildScrollView(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10),
+                                      child: Column(
+                                        children: [
+                                          if (user.activeQueries.isEmpty)
+                                            Center(
+                                                child: NoActiveQueryWidget(
+                                                    sizeConfig: sizeConfig)),
+                                          if (user.activeQueries.isNotEmpty)
+                                            ListView.builder(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount:
+                                                  user.activeQueries.length,
+                                              itemBuilder: (context, index) {
+                                                final query =
+                                                    user.activeQueries[index];
+                                                return QueryCard(
+                                                  queryId: query.id,
+                                                  title: query.title,
+                                                  isArchived: false,
+                                                  sizeConfig: sizeConfig,
+                                                );
+                                              },
+                                            )
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SingleChildScrollView(
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10),
+                                      child: Column(
+                                        children: [
+                                          if (user.archivedQueries.isEmpty)
+                                            Center(
+                                                child: NoActiveQueryWidget(
+                                                    sizeConfig: sizeConfig)),
+                                          if (user.archivedQueries.isNotEmpty)
+                                            ListView.builder(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount:
+                                                  user.archivedQueries.length,
+                                              itemBuilder: (context, index) {
+                                                final query =
+                                                    user.archivedQueries[index];
+                                                return QueryCard(
+                                                  queryId: query.id,
+                                                  title: query.title,
+                                                  isArchived: true,
+                                                  sizeConfig: sizeConfig,
+                                                );
+                                              },
+                                            )
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                ]),
                               ),
-                              if (user.queries.isEmpty)
-                                Center(
-                                    child: NoPrevQueryWidget(
-                                        sizeConfig: sizeConfig)),
-                              if (user.queries.isNotEmpty)
-                                ListView.builder(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: user.queries.length,
-                                  itemBuilder: (context, index) {
-                                    final query = user.queries[index];
-                                    return QueryCard(
-                                      queryId: query.id,
-                                      title: query.title,
-                                      isArchived: false,
-                                      sizeConfig: sizeConfig,
-                                    );
-                                  },
-                                )
                             ]),
                       ),
                     ),

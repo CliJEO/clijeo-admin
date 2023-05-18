@@ -21,7 +21,8 @@ ClijeoUser _$ClijeoUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ClijeoUser {
   String get name => throw _privateConstructorUsedError;
-  List<UserQuery> get queries => throw _privateConstructorUsedError;
+  List<UserQuery> get activeQueries => throw _privateConstructorUsedError;
+  List<UserQuery> get archivedQueries => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,10 @@ abstract class $ClijeoUserCopyWith<$Res> {
           ClijeoUser value, $Res Function(ClijeoUser) then) =
       _$ClijeoUserCopyWithImpl<$Res, ClijeoUser>;
   @useResult
-  $Res call({String name, List<UserQuery> queries});
+  $Res call(
+      {String name,
+      List<UserQuery> activeQueries,
+      List<UserQuery> archivedQueries});
 }
 
 /// @nodoc
@@ -52,16 +56,21 @@ class _$ClijeoUserCopyWithImpl<$Res, $Val extends ClijeoUser>
   @override
   $Res call({
     Object? name = null,
-    Object? queries = null,
+    Object? activeQueries = null,
+    Object? archivedQueries = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      queries: null == queries
-          ? _value.queries
-          : queries // ignore: cast_nullable_to_non_nullable
+      activeQueries: null == activeQueries
+          ? _value.activeQueries
+          : activeQueries // ignore: cast_nullable_to_non_nullable
+              as List<UserQuery>,
+      archivedQueries: null == archivedQueries
+          ? _value.archivedQueries
+          : archivedQueries // ignore: cast_nullable_to_non_nullable
               as List<UserQuery>,
     ) as $Val);
   }
@@ -75,7 +84,10 @@ abstract class _$$_ClijeoUserCopyWith<$Res>
       __$$_ClijeoUserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, List<UserQuery> queries});
+  $Res call(
+      {String name,
+      List<UserQuery> activeQueries,
+      List<UserQuery> archivedQueries});
 }
 
 /// @nodoc
@@ -90,16 +102,21 @@ class __$$_ClijeoUserCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? queries = null,
+    Object? activeQueries = null,
+    Object? archivedQueries = null,
   }) {
     return _then(_$_ClijeoUser(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      queries: null == queries
-          ? _value._queries
-          : queries // ignore: cast_nullable_to_non_nullable
+      activeQueries: null == activeQueries
+          ? _value._activeQueries
+          : activeQueries // ignore: cast_nullable_to_non_nullable
+              as List<UserQuery>,
+      archivedQueries: null == archivedQueries
+          ? _value._archivedQueries
+          : archivedQueries // ignore: cast_nullable_to_non_nullable
               as List<UserQuery>,
     ));
   }
@@ -109,25 +126,36 @@ class __$$_ClijeoUserCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ClijeoUser with DiagnosticableTreeMixin implements _ClijeoUser {
   const _$_ClijeoUser(
-      {required this.name, required final List<UserQuery> queries})
-      : _queries = queries;
+      {required this.name,
+      required final List<UserQuery> activeQueries,
+      required final List<UserQuery> archivedQueries})
+      : _activeQueries = activeQueries,
+        _archivedQueries = archivedQueries;
 
   factory _$_ClijeoUser.fromJson(Map<String, dynamic> json) =>
       _$$_ClijeoUserFromJson(json);
 
   @override
   final String name;
-  final List<UserQuery> _queries;
+  final List<UserQuery> _activeQueries;
   @override
-  List<UserQuery> get queries {
-    if (_queries is EqualUnmodifiableListView) return _queries;
+  List<UserQuery> get activeQueries {
+    if (_activeQueries is EqualUnmodifiableListView) return _activeQueries;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_queries);
+    return EqualUnmodifiableListView(_activeQueries);
+  }
+
+  final List<UserQuery> _archivedQueries;
+  @override
+  List<UserQuery> get archivedQueries {
+    if (_archivedQueries is EqualUnmodifiableListView) return _archivedQueries;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_archivedQueries);
   }
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClijeoUser(name: $name, queries: $queries)';
+    return 'ClijeoUser(name: $name, activeQueries: $activeQueries, archivedQueries: $archivedQueries)';
   }
 
   @override
@@ -136,7 +164,8 @@ class _$_ClijeoUser with DiagnosticableTreeMixin implements _ClijeoUser {
     properties
       ..add(DiagnosticsProperty('type', 'ClijeoUser'))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('queries', queries));
+      ..add(DiagnosticsProperty('activeQueries', activeQueries))
+      ..add(DiagnosticsProperty('archivedQueries', archivedQueries));
   }
 
   @override
@@ -145,13 +174,19 @@ class _$_ClijeoUser with DiagnosticableTreeMixin implements _ClijeoUser {
         (other.runtimeType == runtimeType &&
             other is _$_ClijeoUser &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other._queries, _queries));
+            const DeepCollectionEquality()
+                .equals(other._activeQueries, _activeQueries) &&
+            const DeepCollectionEquality()
+                .equals(other._archivedQueries, _archivedQueries));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_queries));
+      runtimeType,
+      name,
+      const DeepCollectionEquality().hash(_activeQueries),
+      const DeepCollectionEquality().hash(_archivedQueries));
 
   @JsonKey(ignore: true)
   @override
@@ -170,7 +205,8 @@ class _$_ClijeoUser with DiagnosticableTreeMixin implements _ClijeoUser {
 abstract class _ClijeoUser implements ClijeoUser {
   const factory _ClijeoUser(
       {required final String name,
-      required final List<UserQuery> queries}) = _$_ClijeoUser;
+      required final List<UserQuery> activeQueries,
+      required final List<UserQuery> archivedQueries}) = _$_ClijeoUser;
 
   factory _ClijeoUser.fromJson(Map<String, dynamic> json) =
       _$_ClijeoUser.fromJson;
@@ -178,7 +214,9 @@ abstract class _ClijeoUser implements ClijeoUser {
   @override
   String get name;
   @override
-  List<UserQuery> get queries;
+  List<UserQuery> get activeQueries;
+  @override
+  List<UserQuery> get archivedQueries;
   @override
   @JsonKey(ignore: true)
   _$$_ClijeoUserCopyWith<_$_ClijeoUser> get copyWith =>

@@ -4,8 +4,8 @@ import 'package:clijeo_admin/view/core/theme/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class NoPrevQueryWidget extends StatelessWidget {
-  const NoPrevQueryWidget({super.key, required this.sizeConfig});
+class NoActiveQueryWidget extends StatelessWidget {
+  const NoActiveQueryWidget({super.key, required this.sizeConfig});
   final SizeConfig sizeConfig;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class NoPrevQueryWidget extends StatelessWidget {
           ),
         ),
         Text(
-          LocaleTextClass.getTextWithKey(context, "NoPostedQuery"),
+          LocaleTextClass.getTextWithKey(context, "NoActiveQuery"),
           style: AppTextStyle.smallDarkLightBoldBody,
         )
       ],

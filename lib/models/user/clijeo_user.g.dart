@@ -9,7 +9,10 @@ part of 'clijeo_user.dart';
 _$_ClijeoUser _$$_ClijeoUserFromJson(Map<String, dynamic> json) =>
     _$_ClijeoUser(
       name: json['name'] as String,
-      queries: (json['queries'] as List<dynamic>)
+      activeQueries: (json['activeQueries'] as List<dynamic>)
+          .map((e) => UserQuery.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      archivedQueries: (json['archivedQueries'] as List<dynamic>)
           .map((e) => UserQuery.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -17,5 +20,6 @@ _$_ClijeoUser _$$_ClijeoUserFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_ClijeoUserToJson(_$_ClijeoUser instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'queries': instance.queries,
+      'activeQueries': instance.activeQueries,
+      'archivedQueries': instance.archivedQueries,
     };
