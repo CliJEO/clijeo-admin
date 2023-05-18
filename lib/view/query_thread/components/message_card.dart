@@ -103,9 +103,12 @@ class MessageCard extends StatelessWidget {
                         arguments: customer),
                     child: Container(
                       height: 50,
-                      decoration: const BoxDecoration(
-                          color: AppTheme.primaryColor,
-                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                      decoration: BoxDecoration(
+                          color: isArchived
+                              ? AppTheme.disabledColor
+                              : AppTheme.primaryColor,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5))),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Row(

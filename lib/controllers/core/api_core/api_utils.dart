@@ -12,10 +12,14 @@ class ApiUtils {
   static String getQueryDetailsUrl(int queryId) => '/query/$queryId/admin';
 
   // For getting a particular users details
-  static String getUserDetails(String userId) => '/admin/userDetails/$userId';
+  static String getUserDetailsUrl(String userId) =>
+      '/admin/userDetails/$userId';
 
   // For replying to a particular query
   static String replyQueryUrl(int queryId) => '/respond/$queryId/admin';
+
+  // For closing a query thread
+  static String closeThreadUrl(int queryId) => '/query/admin/close/$queryId';
 
   // For saving the fcm token of a user
   static String fcmTokenSaveUrl = '/fcm-token/save/admin';

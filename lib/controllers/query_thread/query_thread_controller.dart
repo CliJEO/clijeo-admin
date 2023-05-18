@@ -101,7 +101,7 @@ class QueryThreadController extends ChangeNotifier {
   Future<ClijeoCustomer> _getCustomer(String userId) async {
     try {
       final result = await DioBase.dioInstance.get(
-        ApiUtils.getUserDetails(userId),
+        ApiUtils.getUserDetailsUrl(userId),
         options: Options(
           headers: {
             'Authorization': 'Bearer ${BackendAuth.getToken()}',
@@ -117,5 +117,29 @@ class QueryThreadController extends ChangeNotifier {
   static String getDatetimeString(String datetime) {
     final dateObj = DateTime.parse(datetime).toLocal();
     return "${DateFormat.yMMMd().format(dateObj)}  ${DateFormat.jm().format(dateObj)}";
+  }
+
+  Future<void> closeThread() async {
+    try {
+      state = const QueryThreadState.loading();
+      notifyListeners();
+
+      await DioBase.dioInstance.post(
+        ApiUtils.closeThreadUrl(queryId),
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${BackendAuth.getToken()}',
+          },
+        ),
+      );
+      state = const QueryThreadState.archived();
+    } on DioError catch (e) {
+      log("[QueryThreadController] (closeThread) DioError:${e.message}");
+      state = const QueryThreadState.error();
+    } on Error catch (e) {
+      log("[QueryThreadController] (closeThread) Error:${e.toString}");
+      state = const QueryThreadState.error();
+    }
+    notifyListeners();
   }
 }
