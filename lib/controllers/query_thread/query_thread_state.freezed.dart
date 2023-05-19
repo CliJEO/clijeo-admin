@@ -19,9 +19,14 @@ mixin _$QueryThreadState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
         stable,
+    required TResult Function() archived,
     required TResult Function() loading,
     required TResult Function() error,
   }) =>
@@ -29,9 +34,14 @@ mixin _$QueryThreadState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult? Function()? archived,
     TResult? Function()? loading,
     TResult? Function()? error,
   }) =>
@@ -39,9 +49,14 @@ mixin _$QueryThreadState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult Function()? archived,
     TResult Function()? loading,
     TResult Function()? error,
     required TResult orElse(),
@@ -51,6 +66,7 @@ mixin _$QueryThreadState {
   TResult map<TResult extends Object?>({
     required TResult Function(_QueryThreadInitial value) initial,
     required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
     required TResult Function(_QueryThreadLoading value) loading,
     required TResult Function(_QueryThreadError value) error,
   }) =>
@@ -59,6 +75,7 @@ mixin _$QueryThreadState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QueryThreadInitial value)? initial,
     TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
     TResult? Function(_QueryThreadLoading value)? loading,
     TResult? Function(_QueryThreadError value)? error,
   }) =>
@@ -67,6 +84,7 @@ mixin _$QueryThreadState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QueryThreadInitial value)? initial,
     TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
     TResult Function(_QueryThreadLoading value)? loading,
     TResult Function(_QueryThreadError value)? error,
     required TResult orElse(),
@@ -131,9 +149,14 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
         stable,
+    required TResult Function() archived,
     required TResult Function() loading,
     required TResult Function() error,
   }) {
@@ -144,9 +167,14 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult? Function()? archived,
     TResult? Function()? loading,
     TResult? Function()? error,
   }) {
@@ -157,9 +185,14 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult Function()? archived,
     TResult Function()? loading,
     TResult Function()? error,
     required TResult orElse(),
@@ -175,6 +208,7 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   TResult map<TResult extends Object?>({
     required TResult Function(_QueryThreadInitial value) initial,
     required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
     required TResult Function(_QueryThreadLoading value) loading,
     required TResult Function(_QueryThreadError value) error,
   }) {
@@ -186,6 +220,7 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QueryThreadInitial value)? initial,
     TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
     TResult? Function(_QueryThreadLoading value)? loading,
     TResult? Function(_QueryThreadError value)? error,
   }) {
@@ -197,6 +232,7 @@ class _$_QueryThreadInitial implements _QueryThreadInitial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QueryThreadInitial value)? initial,
     TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
     TResult Function(_QueryThreadLoading value)? loading,
     TResult Function(_QueryThreadError value)? error,
     required TResult orElse(),
@@ -220,11 +256,13 @@ abstract class _$$_QueryThreadStableCopyWith<$Res> {
   @useResult
   $Res call(
       {Query query,
+      ClijeoCustomer customer,
       List<Attachment> voiceAttachments,
       List<Attachment> otherAttachments,
       String? attachmentError});
 
   $QueryCopyWith<$Res> get query;
+  $ClijeoCustomerCopyWith<$Res> get customer;
 }
 
 /// @nodoc
@@ -239,6 +277,7 @@ class __$$_QueryThreadStableCopyWithImpl<$Res>
   @override
   $Res call({
     Object? query = null,
+    Object? customer = null,
     Object? voiceAttachments = null,
     Object? otherAttachments = null,
     Object? attachmentError = freezed,
@@ -248,6 +287,10 @@ class __$$_QueryThreadStableCopyWithImpl<$Res>
           ? _value.query
           : query // ignore: cast_nullable_to_non_nullable
               as Query,
+      customer: null == customer
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as ClijeoCustomer,
       voiceAttachments: null == voiceAttachments
           ? _value._voiceAttachments
           : voiceAttachments // ignore: cast_nullable_to_non_nullable
@@ -270,6 +313,14 @@ class __$$_QueryThreadStableCopyWithImpl<$Res>
       return _then(_value.copyWith(query: value));
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ClijeoCustomerCopyWith<$Res> get customer {
+    return $ClijeoCustomerCopyWith<$Res>(_value.customer, (value) {
+      return _then(_value.copyWith(customer: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -277,6 +328,7 @@ class __$$_QueryThreadStableCopyWithImpl<$Res>
 class _$_QueryThreadStable implements _QueryThreadStable {
   const _$_QueryThreadStable(
       {required this.query,
+      required this.customer,
       required final List<Attachment> voiceAttachments,
       required final List<Attachment> otherAttachments,
       this.attachmentError})
@@ -285,6 +337,8 @@ class _$_QueryThreadStable implements _QueryThreadStable {
 
   @override
   final Query query;
+  @override
+  final ClijeoCustomer customer;
   final List<Attachment> _voiceAttachments;
   @override
   List<Attachment> get voiceAttachments {
@@ -308,7 +362,7 @@ class _$_QueryThreadStable implements _QueryThreadStable {
 
   @override
   String toString() {
-    return 'QueryThreadState.stable(query: $query, voiceAttachments: $voiceAttachments, otherAttachments: $otherAttachments, attachmentError: $attachmentError)';
+    return 'QueryThreadState.stable(query: $query, customer: $customer, voiceAttachments: $voiceAttachments, otherAttachments: $otherAttachments, attachmentError: $attachmentError)';
   }
 
   @override
@@ -317,6 +371,8 @@ class _$_QueryThreadStable implements _QueryThreadStable {
         (other.runtimeType == runtimeType &&
             other is _$_QueryThreadStable &&
             (identical(other.query, query) || other.query == query) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer) &&
             const DeepCollectionEquality()
                 .equals(other._voiceAttachments, _voiceAttachments) &&
             const DeepCollectionEquality()
@@ -329,6 +385,7 @@ class _$_QueryThreadStable implements _QueryThreadStable {
   int get hashCode => Object.hash(
       runtimeType,
       query,
+      customer,
       const DeepCollectionEquality().hash(_voiceAttachments),
       const DeepCollectionEquality().hash(_otherAttachments),
       attachmentError);
@@ -344,42 +401,59 @@ class _$_QueryThreadStable implements _QueryThreadStable {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
         stable,
+    required TResult Function() archived,
     required TResult Function() loading,
     required TResult Function() error,
   }) {
-    return stable(query, voiceAttachments, otherAttachments, attachmentError);
+    return stable(
+        query, customer, voiceAttachments, otherAttachments, attachmentError);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult? Function()? archived,
     TResult? Function()? loading,
     TResult? Function()? error,
   }) {
     return stable?.call(
-        query, voiceAttachments, otherAttachments, attachmentError);
+        query, customer, voiceAttachments, otherAttachments, attachmentError);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult Function()? archived,
     TResult Function()? loading,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (stable != null) {
-      return stable(query, voiceAttachments, otherAttachments, attachmentError);
+      return stable(
+          query, customer, voiceAttachments, otherAttachments, attachmentError);
     }
     return orElse();
   }
@@ -389,6 +463,7 @@ class _$_QueryThreadStable implements _QueryThreadStable {
   TResult map<TResult extends Object?>({
     required TResult Function(_QueryThreadInitial value) initial,
     required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
     required TResult Function(_QueryThreadLoading value) loading,
     required TResult Function(_QueryThreadError value) error,
   }) {
@@ -400,6 +475,7 @@ class _$_QueryThreadStable implements _QueryThreadStable {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QueryThreadInitial value)? initial,
     TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
     TResult? Function(_QueryThreadLoading value)? loading,
     TResult? Function(_QueryThreadError value)? error,
   }) {
@@ -411,6 +487,7 @@ class _$_QueryThreadStable implements _QueryThreadStable {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QueryThreadInitial value)? initial,
     TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
     TResult Function(_QueryThreadLoading value)? loading,
     TResult Function(_QueryThreadError value)? error,
     required TResult orElse(),
@@ -425,17 +502,157 @@ class _$_QueryThreadStable implements _QueryThreadStable {
 abstract class _QueryThreadStable implements QueryThreadState {
   const factory _QueryThreadStable(
       {required final Query query,
+      required final ClijeoCustomer customer,
       required final List<Attachment> voiceAttachments,
       required final List<Attachment> otherAttachments,
       final String? attachmentError}) = _$_QueryThreadStable;
 
   Query get query;
+  ClijeoCustomer get customer;
   List<Attachment> get voiceAttachments;
   List<Attachment> get otherAttachments;
   String? get attachmentError;
   @JsonKey(ignore: true)
   _$$_QueryThreadStableCopyWith<_$_QueryThreadStable> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_QueryThreadArchivedCopyWith<$Res> {
+  factory _$$_QueryThreadArchivedCopyWith(_$_QueryThreadArchived value,
+          $Res Function(_$_QueryThreadArchived) then) =
+      __$$_QueryThreadArchivedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_QueryThreadArchivedCopyWithImpl<$Res>
+    extends _$QueryThreadStateCopyWithImpl<$Res, _$_QueryThreadArchived>
+    implements _$$_QueryThreadArchivedCopyWith<$Res> {
+  __$$_QueryThreadArchivedCopyWithImpl(_$_QueryThreadArchived _value,
+      $Res Function(_$_QueryThreadArchived) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_QueryThreadArchived implements _QueryThreadArchived {
+  const _$_QueryThreadArchived();
+
+  @override
+  String toString() {
+    return 'QueryThreadState.archived()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_QueryThreadArchived);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
+        stable,
+    required TResult Function() archived,
+    required TResult Function() loading,
+    required TResult Function() error,
+  }) {
+    return archived();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
+        stable,
+    TResult? Function()? archived,
+    TResult? Function()? loading,
+    TResult? Function()? error,
+  }) {
+    return archived?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
+        stable,
+    TResult Function()? archived,
+    TResult Function()? loading,
+    TResult Function()? error,
+    required TResult orElse(),
+  }) {
+    if (archived != null) {
+      return archived();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_QueryThreadInitial value) initial,
+    required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
+    required TResult Function(_QueryThreadLoading value) loading,
+    required TResult Function(_QueryThreadError value) error,
+  }) {
+    return archived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_QueryThreadInitial value)? initial,
+    TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
+    TResult? Function(_QueryThreadLoading value)? loading,
+    TResult? Function(_QueryThreadError value)? error,
+  }) {
+    return archived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_QueryThreadInitial value)? initial,
+    TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
+    TResult Function(_QueryThreadLoading value)? loading,
+    TResult Function(_QueryThreadError value)? error,
+    required TResult orElse(),
+  }) {
+    if (archived != null) {
+      return archived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _QueryThreadArchived implements QueryThreadState {
+  const factory _QueryThreadArchived() = _$_QueryThreadArchived;
 }
 
 /// @nodoc
@@ -477,9 +694,14 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
         stable,
+    required TResult Function() archived,
     required TResult Function() loading,
     required TResult Function() error,
   }) {
@@ -490,9 +712,14 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult? Function()? archived,
     TResult? Function()? loading,
     TResult? Function()? error,
   }) {
@@ -503,9 +730,14 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult Function()? archived,
     TResult Function()? loading,
     TResult Function()? error,
     required TResult orElse(),
@@ -521,6 +753,7 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   TResult map<TResult extends Object?>({
     required TResult Function(_QueryThreadInitial value) initial,
     required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
     required TResult Function(_QueryThreadLoading value) loading,
     required TResult Function(_QueryThreadError value) error,
   }) {
@@ -532,6 +765,7 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QueryThreadInitial value)? initial,
     TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
     TResult? Function(_QueryThreadLoading value)? loading,
     TResult? Function(_QueryThreadError value)? error,
   }) {
@@ -543,6 +777,7 @@ class _$_QueryThreadLoading implements _QueryThreadLoading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QueryThreadInitial value)? initial,
     TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
     TResult Function(_QueryThreadLoading value)? loading,
     TResult Function(_QueryThreadError value)? error,
     required TResult orElse(),
@@ -597,9 +832,14 @@ class _$_QueryThreadError implements _QueryThreadError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)
+    required TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)
         stable,
+    required TResult Function() archived,
     required TResult Function() loading,
     required TResult Function() error,
   }) {
@@ -610,9 +850,14 @@ class _$_QueryThreadError implements _QueryThreadError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult? Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult? Function()? archived,
     TResult? Function()? loading,
     TResult? Function()? error,
   }) {
@@ -623,9 +868,14 @@ class _$_QueryThreadError implements _QueryThreadError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Query query, List<Attachment> voiceAttachments,
-            List<Attachment> otherAttachments, String? attachmentError)?
+    TResult Function(
+            Query query,
+            ClijeoCustomer customer,
+            List<Attachment> voiceAttachments,
+            List<Attachment> otherAttachments,
+            String? attachmentError)?
         stable,
+    TResult Function()? archived,
     TResult Function()? loading,
     TResult Function()? error,
     required TResult orElse(),
@@ -641,6 +891,7 @@ class _$_QueryThreadError implements _QueryThreadError {
   TResult map<TResult extends Object?>({
     required TResult Function(_QueryThreadInitial value) initial,
     required TResult Function(_QueryThreadStable value) stable,
+    required TResult Function(_QueryThreadArchived value) archived,
     required TResult Function(_QueryThreadLoading value) loading,
     required TResult Function(_QueryThreadError value) error,
   }) {
@@ -652,6 +903,7 @@ class _$_QueryThreadError implements _QueryThreadError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_QueryThreadInitial value)? initial,
     TResult? Function(_QueryThreadStable value)? stable,
+    TResult? Function(_QueryThreadArchived value)? archived,
     TResult? Function(_QueryThreadLoading value)? loading,
     TResult? Function(_QueryThreadError value)? error,
   }) {
@@ -663,6 +915,7 @@ class _$_QueryThreadError implements _QueryThreadError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_QueryThreadInitial value)? initial,
     TResult Function(_QueryThreadStable value)? stable,
+    TResult Function(_QueryThreadArchived value)? archived,
     TResult Function(_QueryThreadLoading value)? loading,
     TResult Function(_QueryThreadError value)? error,
     required TResult orElse(),

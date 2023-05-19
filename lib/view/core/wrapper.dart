@@ -1,6 +1,5 @@
 import 'package:clijeo_admin/controllers/main_app/main_app_controller.dart';
 import 'package:clijeo_admin/view/error/network_error_screen.dart';
-import 'package:clijeo_admin/view/first_login_form/first_login_form_screen.dart';
 import 'package:clijeo_admin/view/home/home.dart';
 import 'package:clijeo_admin/view/error/query_thread_error_screen.dart';
 import 'package:clijeo_admin/view/loading/loading.dart';
@@ -20,7 +19,6 @@ class Wrapper extends StatelessWidget {
       return mainAppController.state.when(
           initial: () => const SplashScreen(),
           authenticated: () => const HomeScreen(),
-          authenticatedFirstLogin: () => const FirstLoginFormScreen(),
           loading: () => const Loading(),
           unauthenticated: (signInError) => SignInHomeScreen(
                 signInError: signInError,

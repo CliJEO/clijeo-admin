@@ -7,12 +7,7 @@ part 'clijeo_user_dto.freezed.dart';
 
 @freezed
 class ClijeoUserDto with _$ClijeoUserDto {
-  const factory ClijeoUserDto(
-      {required String name,
-      int? age,
-      String? gender,
-      String? phoneNumber,
-      String? location}) = _ClijeoUserDto;
+  const factory ClijeoUserDto({required String name}) = _ClijeoUserDto;
 
   factory ClijeoUserDto.fromJson(Map<String, dynamic> json) =>
       _ClijeoUserDto.fromJson(json);

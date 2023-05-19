@@ -10,11 +10,8 @@ part 'clijeo_user.freezed.dart';
 class ClijeoUser with _$ClijeoUser {
   const factory ClijeoUser(
       {required String name,
-      int? age,
-      String? gender,
-      String? phoneNumber,
-      String? location,
-      required List<UserQuery> queries}) = _ClijeoUser;
+      required List<UserQuery> activeQueries,
+      required List<UserQuery> archivedQueries}) = _ClijeoUser;
 
   // factory ClijeoUser.empty() {
   //   return const ClijeoUser(name: "", queries: []);

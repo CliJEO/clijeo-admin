@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:clijeo_admin/controllers/new_query/audio_playback/audio_playback_controller.dart';
+import 'package:clijeo_admin/controllers/core/audio_playback/audio_playback_controller.dart';
 import 'package:clijeo_admin/view/loading/loading_widget.dart';
 import 'package:clijeo_admin/view/error/widgets/custom_error_widget.dart';
 import 'package:clijeo_admin/view/core/theme/app_color.dart';

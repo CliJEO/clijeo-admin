@@ -1,5 +1,6 @@
 import 'package:clijeo_admin/models/attachment/attachment.dart';
 import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
+import 'package:clijeo_admin/models/customer/clijeo_customer.dart';
 import 'package:clijeo_admin/models/query/media/query_media.dart';
 import 'package:clijeo_admin/view/core/common_components/query_audio_player.dart';
 import 'package:clijeo_admin/view/error/widgets/custom_error_widget.dart';
@@ -8,6 +9,7 @@ import 'package:clijeo_admin/view/core/theme/app_color.dart';
 import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
 import 'package:clijeo_admin/view/core/theme/size_config.dart';
 import 'package:clijeo_admin/view/query_thread/components/query_thread_voice_attachment_widget.dart';
+import 'package:clijeo_admin/view/query_thread/customer_details.dart';
 import 'package:flutter/material.dart';
 
 class MessageCard extends StatelessWidget {
@@ -18,6 +20,7 @@ class MessageCard extends StatelessWidget {
       required this.date,
       required this.isArchived,
       required this.sizeConfig,
+      this.customer,
       this.attachmentError,
       this.voiceAttachments,
       this.otherAttachments});
@@ -26,6 +29,7 @@ class MessageCard extends StatelessWidget {
   final bool isArchived;
   final String body;
   final String date;
+  final ClijeoCustomer? customer;
   final String? attachmentError;
   final List<Attachment>? otherAttachments;
   final List<Attachment>? voiceAttachments;
@@ -39,16 +43,16 @@ class MessageCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppTheme.backgroundColor,
           // borderRadius: const BorderRadius.all(Radius.circular(5)),
-          border: user == "You"
+          border: user == "Admin"
               ? Border(
-                  left: BorderSide(
+                  right: BorderSide(
                       width: 5.0,
                       color: isArchived
                           ? AppTheme.disabledColor
                           : AppTheme.primaryColor),
                 )
               : Border(
-                  right: BorderSide(
+                  left: BorderSide(
                       width: 5.0,
                       color: isArchived
                           ? AppTheme.disabledColor
@@ -63,14 +67,19 @@ class MessageCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  LocaleTextClass.getTextWithKey(context, user),
+                  user == "Admin"
+                      ? LocaleTextClass.getTextWithKey(context, user)
+                      : user,
                   style: isArchived
                       ? AppTextStyle.smallDarkLightTitle
                       : AppTextStyle.smallAccentTitle,
+                ),
+                const SizedBox(
+                  height: 5,
                 ),
                 Text(
                   date,
@@ -88,6 +97,50 @@ class MessageCard extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+            if (customer != null)
+              Column(
+                children: [
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(
+                        context, CustomerDetailsScreen.id,
+                        arguments: customer),
+                    child: Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                          color: isArchived
+                              ? AppTheme.disabledColor
+                              : AppTheme.primaryColor,
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5))),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                const Icon(Icons.person,
+                                    color: AppTheme.textLight, size: 25),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  LocaleTextClass.getTextWithKey(
+                                      context, "UserDetails"),
+                                  style: AppTextStyle.veryMidSmallLightTitle,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
             if (attachmentError != null)
               CustomErrorWidget(
                   showErrorHeading: false,
