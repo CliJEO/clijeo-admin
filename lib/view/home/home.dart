@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   Tab(
                                     text: LocaleTextClass.getTextWithKey(
-                                        context, "PendingQueries"),
+                                        context, "ArchivedQueries"),
                                   )
                                 ]),
                             Expanded(

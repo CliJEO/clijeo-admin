@@ -27,7 +27,7 @@
     "Hello": "Hello",
     "RegisterQuery": "Register a new query",
     "ActiveQueries": "Active Queries",
-    "PendingQueries": "Pending Queries",
+    "ArchivedQueries": "Archived Queries",
     "NoActiveQuery": "There are no active queries",
     "NoArchivedQuery": "There are no archived queries",
     "Settings": "Settings",

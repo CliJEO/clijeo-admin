@@ -5,7 +5,7 @@ class AppTheme {
   // static const Color primaryColor = Color(0xFF3C37FF);
   static const Color primaryColor = Color(0xFFBA3504);
   static const Color splashScreenColor = Color(0xFFBA3504);
-  static const Color lighterPrimaryColor = Color(0xFFC5B3E3);
+  static const Color lighterPrimaryColor = Color(0xFFF27F0C);
   static const Color textDark = Color(0xFF000000);
   static const Color textDarkLight = Color(0xFF89949F);
   static const Color textLight = Color(0xFFFFFFFF);
