@@ -89,6 +89,7 @@ class CustomerDetailsScreen extends StatelessWidget {
                         height: 20,
                       ),
                       DisabledFormField(
+                          isLargeField: true,
                           fieldTitle: LocaleTextClass.getTextWithKey(
                               context, "Location"),
                           fieldValue: _outputFormatting(customer.location)),
