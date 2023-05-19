@@ -9,6 +9,7 @@ import 'package:clijeo_admin/controllers/core/error/error_controller.dart';
 import 'package:clijeo_admin/controllers/core/file/file_controller.dart';
 import 'package:clijeo_admin/controllers/query_thread/query_thread_state.dart';
 import 'package:clijeo_admin/models/attachment/attachment.dart';
+import 'package:clijeo_admin/models/customer/clijeo_customer.dart';
 import 'package:clijeo_admin/models/query/query.dart';
 import 'package:clijeo_admin/models/query/query_response/query_response.dart';
 import 'package:dio/dio.dart';
@@ -23,8 +24,9 @@ class QueryThreadController extends ChangeNotifier {
 
   QueryThreadController({required this.queryId});
 
-  static String getResponderName(QueryResponse queryResponse) =>
-      queryResponse.admin == null ? "You" : "Admin";
+  static String getResponderName(
+          QueryResponse queryResponse, String customerName) =>
+      queryResponse.admin == null ? customerName : "Admin";
 
   Future<void> getQueryDetails() async {
     try {
@@ -38,15 +40,19 @@ class QueryThreadController extends ChangeNotifier {
       );
       final query = Query.fromJson(result.data);
       final attachments = await _loadAttachments(query);
+      final customer = await _getCustomer(query.user.id);
+
       if (attachments == null) {
         state = QueryThreadState.stable(
             query: query,
+            customer: customer,
             voiceAttachments: [],
             otherAttachments: [],
             attachmentError: ErrorController.loadingAttachmentError);
       } else {
         state = QueryThreadState.stable(
             query: query,
+            customer: customer,
             voiceAttachments: attachments["audio"]!,
             otherAttachments: attachments["other"]!);
       }
@@ -92,8 +98,48 @@ class QueryThreadController extends ChangeNotifier {
     return attachments;
   }
 
+  Future<ClijeoCustomer> _getCustomer(String userId) async {
+    try {
+      final result = await DioBase.dioInstance.get(
+        ApiUtils.getUserDetailsUrl(userId),
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${BackendAuth.getToken()}',
+          },
+        ),
+      );
+      return ClijeoCustomer.fromJson(result.data);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   static String getDatetimeString(String datetime) {
     final dateObj = DateTime.parse(datetime).toLocal();
     return "${DateFormat.yMMMd().format(dateObj)}  ${DateFormat.jm().format(dateObj)}";
+  }
+
+  Future<void> closeThread() async {
+    try {
+      state = const QueryThreadState.loading();
+      notifyListeners();
+
+      await DioBase.dioInstance.post(
+        ApiUtils.closeThreadUrl(queryId),
+        options: Options(
+          headers: {
+            'Authorization': 'Bearer ${BackendAuth.getToken()}',
+          },
+        ),
+      );
+      state = const QueryThreadState.archived();
+    } on DioError catch (e) {
+      log("[QueryThreadController] (closeThread) DioError:${e.message}");
+      state = const QueryThreadState.error();
+    } on Error catch (e) {
+      log("[QueryThreadController] (closeThread) Error:${e.toString}");
+      state = const QueryThreadState.error();
+    }
+    notifyListeners();
   }
 }

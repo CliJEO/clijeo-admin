@@ -22,7 +22,7 @@ QueryResponse _$QueryResponseFromJson(Map<String, dynamic> json) {
 mixin _$QueryResponse {
   String get content => throw _privateConstructorUsedError;
   String get timestamp => throw _privateConstructorUsedError;
-  QueryResponseAdminDetails? get admin => throw _privateConstructorUsedError;
+  ClijeoUserDto? get admin => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,10 +36,9 @@ abstract class $QueryResponseCopyWith<$Res> {
           QueryResponse value, $Res Function(QueryResponse) then) =
       _$QueryResponseCopyWithImpl<$Res, QueryResponse>;
   @useResult
-  $Res call(
-      {String content, String timestamp, QueryResponseAdminDetails? admin});
+  $Res call({String content, String timestamp, ClijeoUserDto? admin});
 
-  $QueryResponseAdminDetailsCopyWith<$Res>? get admin;
+  $ClijeoUserDtoCopyWith<$Res>? get admin;
 }
 
 /// @nodoc
@@ -71,18 +70,18 @@ class _$QueryResponseCopyWithImpl<$Res, $Val extends QueryResponse>
       admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
-              as QueryResponseAdminDetails?,
+              as ClijeoUserDto?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $QueryResponseAdminDetailsCopyWith<$Res>? get admin {
+  $ClijeoUserDtoCopyWith<$Res>? get admin {
     if (_value.admin == null) {
       return null;
     }
 
-    return $QueryResponseAdminDetailsCopyWith<$Res>(_value.admin!, (value) {
+    return $ClijeoUserDtoCopyWith<$Res>(_value.admin!, (value) {
       return _then(_value.copyWith(admin: value) as $Val);
     });
   }
@@ -96,11 +95,10 @@ abstract class _$$_QueryResponseCopyWith<$Res>
       __$$_QueryResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String content, String timestamp, QueryResponseAdminDetails? admin});
+  $Res call({String content, String timestamp, ClijeoUserDto? admin});
 
   @override
-  $QueryResponseAdminDetailsCopyWith<$Res>? get admin;
+  $ClijeoUserDtoCopyWith<$Res>? get admin;
 }
 
 /// @nodoc
@@ -130,7 +128,7 @@ class __$$_QueryResponseCopyWithImpl<$Res>
       admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
-              as QueryResponseAdminDetails?,
+              as ClijeoUserDto?,
     ));
   }
 }
@@ -149,7 +147,7 @@ class _$_QueryResponse with DiagnosticableTreeMixin implements _QueryResponse {
   @override
   final String timestamp;
   @override
-  final QueryResponseAdminDetails? admin;
+  final ClijeoUserDto? admin;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -199,7 +197,7 @@ abstract class _QueryResponse implements QueryResponse {
   const factory _QueryResponse(
       {required final String content,
       required final String timestamp,
-      final QueryResponseAdminDetails? admin}) = _$_QueryResponse;
+      final ClijeoUserDto? admin}) = _$_QueryResponse;
 
   factory _QueryResponse.fromJson(Map<String, dynamic> json) =
       _$_QueryResponse.fromJson;
@@ -209,7 +207,7 @@ abstract class _QueryResponse implements QueryResponse {
   @override
   String get timestamp;
   @override
-  QueryResponseAdminDetails? get admin;
+  ClijeoUserDto? get admin;
   @override
   @JsonKey(ignore: true)
   _$$_QueryResponseCopyWith<_$_QueryResponse> get copyWith =>

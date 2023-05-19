@@ -1,13 +1,9 @@
-import 'dart:developer';
 import 'package:clijeo_admin/controllers/clijeo_user/clijeo_user_controller.dart';
 import 'package:clijeo_admin/controllers/core/language/locale_text_class.dart';
-import 'package:clijeo_admin/models/user/clijeo_user.dart';
-import 'package:clijeo_admin/view/core/common_components/primary_button.dart';
-import 'package:clijeo_admin/view/home/components/no_prev_query_widget.dart';
+import 'package:clijeo_admin/view/home/components/no_active_query_widget.dart';
 import 'package:clijeo_admin/view/home/components/query_cards.dart';
 import 'package:clijeo_admin/view/error/query_thread_error_screen.dart';
 import 'package:clijeo_admin/view/loading/loading.dart';
-import 'package:clijeo_admin/view/new_query/new_query_form_screen.dart';
 import 'package:clijeo_admin/view/settings/settings_main_screen.dart';
 import 'package:clijeo_admin/view/core/theme/app_color.dart';
 import 'package:clijeo_admin/view/core/theme/app_text_style.dart';
@@ -18,15 +14,6 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   static String id = "HomeScreen";
   const HomeScreen({super.key});
-
-  Future<void> _registerNewQueryPressed(
-      context, ClijeoUserController userController) async {
-    var shouldRefresh =
-        await Navigator.pushNamed(context, NewQueryFormScreen.id);
-    if (shouldRefresh is bool && shouldRefresh) {
-      await _refresh(userController);
-    }
-  }
 
   Future<void> _refresh(ClijeoUserController userController) async {
     await userController.refreshUser();
@@ -46,95 +33,144 @@ class HomeScreen extends StatelessWidget {
         builder: (context, userController, _) => userController.state.when(
             noUser: () => QueryThreadErrorScreen(),
             loading: () => Loading(),
-            stable: (user, refreshError) => Scaffold(
-                  backgroundColor: AppTheme.backgroundColor,
-                  body: RefreshIndicator(
+            stable: (user, refreshError) => DefaultTabController(
+                  length: 2,
+                  child: Scaffold(
                     backgroundColor: AppTheme.backgroundColor,
-                    color: AppTheme.primaryColor,
-                    strokeWidth: 3,
-                    triggerMode: RefreshIndicatorTriggerMode.onEdge,
-                    onRefresh: () => _refresh(userController),
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(30, 60, 30, 20),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        LocaleTextClass.getTextWithKey(
-                                            context, "Hello"),
-                                        style: AppTextStyle.regularDarkTitle,
-                                      ),
-                                      const SizedBox(
-                                        width: 3,
-                                      ),
-                                      Text(
-                                        _preprocessString(user.name),
-                                        style: AppTextStyle.regularAccentTitle,
-                                      )
-                                    ],
+                    body: Padding(
+                      padding: const EdgeInsets.fromLTRB(15, 60, 15, 20),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      LocaleTextClass.getTextWithKey(
+                                          context, "Hello"),
+                                      style: AppTextStyle.regularDarkTitle,
+                                    ),
+                                    const SizedBox(
+                                      width: 3,
+                                    ),
+                                    Text(
+                                      _preprocessString(user.name),
+                                      style: AppTextStyle.regularAccentTitle,
+                                    )
+                                  ],
+                                ),
+                                GestureDetector(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, SettingsMainScreen.id),
+                                    child: const SizedBox(
+                                      width: 40,
+                                      child: Icon(Icons.settings,
+                                          color: AppTheme.textDark, size: 25),
+                                    )),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            TabBar(
+                                labelStyle: AppTextStyle.smallDarkTitle,
+                                labelColor: AppTheme.textDark,
+                                unselectedLabelStyle:
+                                    AppTextStyle.smallDarkLightTitle,
+                                unselectedLabelColor: AppTheme.textDarkLight,
+                                indicatorColor: AppTheme.primaryColor,
+                                tabs: [
+                                  Tab(
+                                    text: LocaleTextClass.getTextWithKey(
+                                        context, "ActiveQueries"),
                                   ),
-                                  GestureDetector(
-                                      onTap: () => Navigator.pushNamed(
-                                          context, SettingsMainScreen.id),
-                                      child: const SizedBox(
-                                        width: 40,
-                                        child: Icon(Icons.settings,
-                                            color: AppTheme.textDark, size: 25),
-                                      )),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 30,
-                              ),
-                              PrimaryButton(
-                                onTap: () => _registerNewQueryPressed(
-                                    context, userController),
-                                sizeConfig: sizeConfig,
-                                child: Center(
-                                  child: Text(
-                                    LocaleTextClass.getTextWithKey(
-                                        context, "RegisterQuery"),
-                                    style: AppTextStyle.smallLightTitle,
+                                  Tab(
+                                    text: LocaleTextClass.getTextWithKey(
+                                        context, "PendingQueries"),
+                                  )
+                                ]),
+                            Expanded(
+                              child: TabBarView(children: [
+                                RefreshIndicator(
+                                  backgroundColor: AppTheme.backgroundColor,
+                                  color: AppTheme.primaryColor,
+                                  strokeWidth: 3,
+                                  triggerMode:
+                                      RefreshIndicatorTriggerMode.onEdge,
+                                  onRefresh: () => _refresh(userController),
+                                  child: SingleChildScrollView(
+                                    physics: const BouncingScrollPhysics(),
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 10),
+                                      child: Column(
+                                        children: [
+                                          if (user.activeQueries.isEmpty)
+                                            Center(
+                                                child: NoActiveQueryWidget(
+                                                    sizeConfig: sizeConfig)),
+                                          if (user.activeQueries.isNotEmpty)
+                                            ListView.builder(
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              shrinkWrap: true,
+                                              itemCount:
+                                                  user.activeQueries.length,
+                                              itemBuilder: (context, index) {
+                                                final query =
+                                                    user.activeQueries[index];
+                                                return QueryCard(
+                                                  queryId: query.id,
+                                                  title: query.title,
+                                                  isArchived: false,
+                                                  sizeConfig: sizeConfig,
+                                                );
+                                              },
+                                            )
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(
-                                height: 30,
-                              ),
-                              Text(
-                                LocaleTextClass.getTextWithKey(
-                                    context, "PreviousQueries"),
-                                style: AppTextStyle.smallDarkTitle,
-                              ),
-                              if (user.queries.isEmpty)
-                                Center(
-                                    child: NoPrevQueryWidget(
-                                        sizeConfig: sizeConfig)),
-                              if (user.queries.isNotEmpty)
-                                ListView.builder(
-                                  physics: const NeverScrollableScrollPhysics(),
-                                  shrinkWrap: true,
-                                  itemCount: user.queries.length,
-                                  itemBuilder: (context, index) {
-                                    final query = user.queries[index];
-                                    return QueryCard(
-                                      queryId: query.id,
-                                      title: query.title,
-                                      isArchived: query.closed,
-                                      sizeConfig: sizeConfig,
-                                    );
-                                  },
+                                SingleChildScrollView(
+                                  physics: const BouncingScrollPhysics(),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
+                                    child: Column(
+                                      children: [
+                                        if (user.archivedQueries.isEmpty)
+                                          Center(
+                                              child: NoActiveQueryWidget(
+                                                  sizeConfig: sizeConfig)),
+                                        if (user.archivedQueries.isNotEmpty)
+                                          ListView.builder(
+                                            physics:
+                                                const NeverScrollableScrollPhysics(),
+                                            shrinkWrap: true,
+                                            itemCount:
+                                                user.archivedQueries.length,
+                                            itemBuilder: (context, index) {
+                                              final query =
+                                                  user.archivedQueries[index];
+                                              return QueryCard(
+                                                queryId: query.id,
+                                                title: query.title,
+                                                isArchived: true,
+                                                sizeConfig: sizeConfig,
+                                              );
+                                            },
+                                          )
+                                      ],
+                                    ),
+                                  ),
                                 )
-                            ]),
-                      ),
+                              ]),
+                            ),
+                          ]),
                     ),
                   ),
                 )));

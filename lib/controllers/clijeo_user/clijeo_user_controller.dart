@@ -14,17 +14,6 @@ class ClijeoUserController extends ChangeNotifier {
 
   ClijeoUserController() : state = const ClijeoUserState.noUser();
 
-  static bool isFirstLoggedInUser(ClijeoUser user) {
-    // New user with unfilled profile
-    if (user.age == null &&
-        user.gender == null &&
-        user.location == null &&
-        user.phoneNumber == null) {
-      return true;
-    }
-    return false;
-  }
-
   Future<void> refreshUser() async {
     state = const ClijeoUserState.loading();
     notifyListeners();
@@ -46,7 +35,7 @@ class ClijeoUserController extends ChangeNotifier {
               state.copyWith(refreshError: ErrorController.refreshUserError),
           orElse: () => state);
     } on Error catch (e) {
-      log("ClijeoUserController] (refreshUser) Error: ${e.toString}");
+      log("ClijeoUserController] (refreshUser) Error: ${e}");
       state = state.maybeMap(
           stable: (state) =>
               state.copyWith(refreshError: ErrorController.refreshUserError),

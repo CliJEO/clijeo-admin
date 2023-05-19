@@ -14,37 +14,14 @@ import 'package:flutter/material.dart';
 class EditSettingsFormController extends ChangeNotifier {
   EditSettingsFormState state;
 
-  EditSettingsFormController(
-      {required String name,
-      int? age,
-      required String gender,
-      required String language,
-      String? phoneNumber,
-      String? location})
-      : state = EditSettingsFormState.stable(
-            name: name,
-            age: age,
-            gender: gender,
-            language: language,
-            phoneNumber: phoneNumber,
-            location: location);
+  EditSettingsFormController({required String name, required String language})
+      : state = EditSettingsFormState.stable(name: name, language: language);
 
   void updateStableStateName(String? updatedName) {
     if (updatedName != null) {
       state = state.maybeMap(
           stable: (value) => value.copyWith(name: updatedName),
           orElse: () => state);
-    }
-  }
-
-  void updateStableStateGender(String? updatedGender) {
-    if (updatedGender != null) {
-      state = state.maybeMap(
-          stable: (value) => value.copyWith(gender: updatedGender),
-          orElse: () => state);
-
-      // Since these fields correspond to UI that needs to change
-      notifyListeners();
     }
   }
 
@@ -59,40 +36,10 @@ class EditSettingsFormController extends ChangeNotifier {
     }
   }
 
-  void updateStableStateAge(String? updatedAge) {
-    if (updatedAge != null) {
-      state = state.maybeMap(
-          stable: (value) => value.copyWith(age: int.tryParse(updatedAge)),
-          orElse: () => state);
-    }
-  }
-
-  void updateStableStatePhoneNumber(String? updatedPhoneNumber) {
-    if (updatedPhoneNumber != null) {
-      state = state.maybeMap(
-          stable: (value) => value.copyWith(phoneNumber: updatedPhoneNumber),
-          orElse: () => state);
-    }
-  }
-
-  void updateStableStateLocation(String? updatedLocation) {
-    if (updatedLocation != null) {
-      state = state.maybeMap(
-          stable: (value) => value.copyWith(location: updatedLocation),
-          orElse: () => state);
-    }
-  }
-
   Future<void> saveProfileDetails(LanguageController languageController) async {
     state = await state.maybeMap(
         stable: (oldState) async {
-          final user = ClijeoUserDto(
-            name: oldState.name,
-            age: oldState.age,
-            gender: oldState.gender,
-            phoneNumber: oldState.phoneNumber,
-            location: oldState.location,
-          );
+          final user = ClijeoUserDto(name: oldState.name);
 
           // Setting the state to loading as processing continues
           state = const EditSettingsFormState.loading();

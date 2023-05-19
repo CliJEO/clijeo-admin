@@ -100,21 +100,6 @@ class SettingsMainScreen extends StatelessWidget {
                                 height: 20,
                               ),
                               DisabledFormField(
-                                  fieldTitle: LocaleTextClass.getTextWithKey(
-                                      context, "Age"),
-                                  fieldValue: user.age.toString()),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              DisabledFormField(
-                                fieldTitle: LocaleTextClass.getTextWithKey(
-                                    context, "Gender"),
-                                fieldValue: user.gender,
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              DisabledFormField(
                                 fieldTitle: LocaleTextClass.getTextWithKey(
                                     context, "LanguagePreference"),
                                 fieldValue: LocaleTextClass.getTextWithKey(
@@ -123,20 +108,6 @@ class SettingsMainScreen extends StatelessWidget {
                                             listen: false)
                                         .getCurrentLanguageCode()),
                               ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              DisabledFormField(
-                                  fieldTitle: LocaleTextClass.getTextWithKey(
-                                      context, "PhoneNumber"),
-                                  fieldValue: user.phoneNumber),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              DisabledFormField(
-                                  fieldTitle: LocaleTextClass.getTextWithKey(
-                                      context, "Location"),
-                                  fieldValue: user.location),
                               const SizedBox(
                                 height: 30,
                               ),

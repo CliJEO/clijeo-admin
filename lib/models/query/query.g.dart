@@ -12,6 +12,7 @@ _$_Query _$$_QueryFromJson(Map<String, dynamic> json) => _$_Query(
       content: json['content'] as String,
       closed: json['closed'] as bool,
       timestamp: json['timestamp'] as String,
+      user: ClijeoCustomerDto.fromJson(json['user'] as Map<String, dynamic>),
       media: (json['media'] as List<dynamic>)
           .map((e) => QueryMedia.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -26,6 +27,7 @@ Map<String, dynamic> _$$_QueryToJson(_$_Query instance) => <String, dynamic>{
       'content': instance.content,
       'closed': instance.closed,
       'timestamp': instance.timestamp,
+      'user': instance.user,
       'media': instance.media,
       'responses': instance.responses,
     };

@@ -23,7 +23,6 @@ mixin _$UserQuery {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
-  bool get closed => throw _privateConstructorUsedError;
   String get timestamp => throw _privateConstructorUsedError;
   int get responseCount => throw _privateConstructorUsedError;
 
@@ -42,7 +41,6 @@ abstract class $UserQueryCopyWith<$Res> {
       {int id,
       String title,
       String content,
-      bool closed,
       String timestamp,
       int responseCount});
 }
@@ -63,7 +61,6 @@ class _$UserQueryCopyWithImpl<$Res, $Val extends UserQuery>
     Object? id = null,
     Object? title = null,
     Object? content = null,
-    Object? closed = null,
     Object? timestamp = null,
     Object? responseCount = null,
   }) {
@@ -80,10 +77,6 @@ class _$UserQueryCopyWithImpl<$Res, $Val extends UserQuery>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      closed: null == closed
-          ? _value.closed
-          : closed // ignore: cast_nullable_to_non_nullable
-              as bool,
       timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
@@ -107,7 +100,6 @@ abstract class _$$_UserQueryCopyWith<$Res> implements $UserQueryCopyWith<$Res> {
       {int id,
       String title,
       String content,
-      bool closed,
       String timestamp,
       int responseCount});
 }
@@ -126,7 +118,6 @@ class __$$_UserQueryCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? content = null,
-    Object? closed = null,
     Object? timestamp = null,
     Object? responseCount = null,
   }) {
@@ -143,10 +134,6 @@ class __$$_UserQueryCopyWithImpl<$Res>
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
               as String,
-      closed: null == closed
-          ? _value.closed
-          : closed // ignore: cast_nullable_to_non_nullable
-              as bool,
       timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
@@ -166,7 +153,6 @@ class _$_UserQuery with DiagnosticableTreeMixin implements _UserQuery {
       {required this.id,
       required this.title,
       required this.content,
-      required this.closed,
       required this.timestamp,
       required this.responseCount});
 
@@ -180,15 +166,13 @@ class _$_UserQuery with DiagnosticableTreeMixin implements _UserQuery {
   @override
   final String content;
   @override
-  final bool closed;
-  @override
   final String timestamp;
   @override
   final int responseCount;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserQuery(id: $id, title: $title, content: $content, closed: $closed, timestamp: $timestamp, responseCount: $responseCount)';
+    return 'UserQuery(id: $id, title: $title, content: $content, timestamp: $timestamp, responseCount: $responseCount)';
   }
 
   @override
@@ -199,7 +183,6 @@ class _$_UserQuery with DiagnosticableTreeMixin implements _UserQuery {
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('content', content))
-      ..add(DiagnosticsProperty('closed', closed))
       ..add(DiagnosticsProperty('timestamp', timestamp))
       ..add(DiagnosticsProperty('responseCount', responseCount));
   }
@@ -212,7 +195,6 @@ class _$_UserQuery with DiagnosticableTreeMixin implements _UserQuery {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.content, content) || other.content == content) &&
-            (identical(other.closed, closed) || other.closed == closed) &&
             (identical(other.timestamp, timestamp) ||
                 other.timestamp == timestamp) &&
             (identical(other.responseCount, responseCount) ||
@@ -221,8 +203,8 @@ class _$_UserQuery with DiagnosticableTreeMixin implements _UserQuery {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, content, closed, timestamp, responseCount);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, content, timestamp, responseCount);
 
   @JsonKey(ignore: true)
   @override
@@ -243,7 +225,6 @@ abstract class _UserQuery implements UserQuery {
       {required final int id,
       required final String title,
       required final String content,
-      required final bool closed,
       required final String timestamp,
       required final int responseCount}) = _$_UserQuery;
 
@@ -256,8 +237,6 @@ abstract class _UserQuery implements UserQuery {
   String get title;
   @override
   String get content;
-  @override
-  bool get closed;
   @override
   String get timestamp;
   @override
