@@ -97,9 +97,13 @@ class SignInHomeScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset(
-                                'assets/google_logo.png',
-                                scale: 0.06,
+                              // Image.asset(
+                              //   'assets/google_logo.png',
+                              //   scale: 0.06,
+                              // ),
+                              const Icon(
+                                Icons.person,
+                                color: AppTheme.backgroundColor,
                               ),
                               const SizedBox(
                                 width: 20,
