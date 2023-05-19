@@ -12,12 +12,12 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final sizeConfig = SizeConfig(context);
     return Scaffold(
-        backgroundColor: AppTheme.primaryColor,
+        backgroundColor: AppTheme.splashScreenColor,
         body: Center(
           child: SizedBox(
             width: sizeConfig.safeBlockSizeHorizontal(0.7),
             child: Image.asset(
-              "assets/clijeo.jpeg",
+              "assets/admin.png",
             ),
           ),
         ));
