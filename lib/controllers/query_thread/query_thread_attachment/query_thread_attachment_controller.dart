@@ -45,8 +45,9 @@ class QueryThreadAttachmentController extends ChangeNotifier {
             notifyListeners();
 
             Directory directory = await getApplicationDocumentsDirectory();
+            List<String> path_arr = oldState.downloadPath.split("/");
             String filepath =
-                "${directory.path}/${oldState.downloadPath.split("/").last}";
+                "${directory.path}/${path_arr[path_arr.length - 2]}";
             File file = File(filepath);
             final result = await DioBase.dioInstance.get(
               oldState.downloadPath,
@@ -81,6 +82,7 @@ class QueryThreadAttachmentController extends ChangeNotifier {
   Future<void> open() async {
     await state.maybeWhen(
         downloaded: (attachmentPath) async {
+          print(attachmentPath);
           await OpenFile.open(attachmentPath);
         },
         orElse: () {});

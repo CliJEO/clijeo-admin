@@ -31,7 +31,7 @@ class DisabledFormField extends StatelessWidget {
           decoration: const BoxDecoration(
               color: AppTheme.selectedColor,
               borderRadius: BorderRadius.all(Radius.circular(5))),
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.topLeft,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
